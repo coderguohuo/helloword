@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="zhuanpan_item" width="173" height="167" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group x="0" y="141" anchorOffsetX="0" width="173">
+		<e:Label id="lab_name" text="Label" x="0" y="0" textColor="0x855b2c" fontFamily="SimHei" size="22"/>
+		<e:Label id="lab_num" text="Label" x="74" y="0" textColor="0x855B2C" fontFamily="SimHei" size="22"/>
+		<e:layout>
+			<e:HorizontalLayout gap="8" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+	<e:Group id="group" width="168" height="129.2" y="4" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0">
+		<e:Image id="img" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

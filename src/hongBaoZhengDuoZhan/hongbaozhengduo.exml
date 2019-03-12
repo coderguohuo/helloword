@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="hongbaozhengduo" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_hongbaozhengduo_png" x="20" verticalCenter="0"/>
+	<e:Image id="img_close" source="close_png" x="625" y="222"/>
+	<e:Image id="btn_canjia" source="btn_lijicanjia_png" x="275" y="1018"/>
+	<e:Scroller width="670" height="500" y="488" horizontalCenter="0">
+		<e:Group id="group">
+			<e:Label id="lab_content" text="游戏规则" y="0" textColor="0x333333" size="26" fontFamily="SimHei" width="670" multiline="true" lineSpacing="8"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

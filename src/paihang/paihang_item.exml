@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="paihang_item" width="650" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xf0f9ff" ellipseWidth="30"/>
+	<e:Image id="img_icon" source="icon1_png" x="21.5" width="100" height="100" verticalCenter="0"/>
+	<e:Image source="hongbao2_png" x="135" y="67.5" scaleX="0.5" scaleY="0.5"/>
+	<e:Label id="lab_name" text="Label" x="135" y="15.5" textColor="0x333333" size="30" fontFamily="SimHei"/>
+	<e:Label id="lab_hongbao" text="Label" x="172" y="75.5" textColor="0xe76565" size="26" fontFamily="SimHei"/>
+	<e:Image id="img_pai" source="paihang_4_png" x="569.67" y="17.5"/>
+	<e:Label id="lab_paiming" text="" x="574.37" y="32.5" textColor="0xE76565" size="24" fontFamily="SimHei" anchorOffsetX="0" width="49.6" textAlign="center"/>
+</e:Skin>

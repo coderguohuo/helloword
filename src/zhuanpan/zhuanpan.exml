@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="zhuanpan" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_zhuanpan_jpg" x="0" y="128"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="幸运召唤" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Image source="zhuanpan_bg_lan_png" y="478" horizontalCenter="0"/>
+	<e:RadioButton id="rad0" label="" x="31.34" y="491.33" touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="202.67" y="491.33"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="373.66" y="491.33"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="545.32" y="491.33"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="545.32" y="657.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="545.32" y="824.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="373.5" y="824.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="202" y="824.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="31.34" y="824.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton label="" x="31.34" y="657.66"  touchEnabled="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zhuanpan_noselect_png" source.down="zhuanpan_select_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:Image id="btn_yes" source="btn_zhuanpan_png" y="661.66" horizontalCenter="0"/>
+	<e:Image id="img_selsect" source="zhuanpan_xuxian_png" x="247" y="1047.03"/>
+	<e:Label text="消耗:" x="38" y="1076.03" fontFamily="SimHei" size="28"/>
+	<e:Label text="金币召唤" x="263" y="1104.38" fontFamily="SimHei" size="24"/>
+	<e:Label text="幸运召唤" x="469.25" y="1104.03" fontFamily="SimHei" size="24"/>
+	<e:Group x="247" y="1051.03" anchorOffsetX="0" width="130">
+		<e:Image source="gold2_png" x="0" y="0"/>
+		<e:Label id="lab_goldnum" text="x1" x="64.67000000000002" fontFamily="SimHei" size="22" anchorOffsetY="0" bottom="1" height="49" verticalAlign="bottom"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" gap="8"/>
+		</e:layout>
+	</e:Group>
+	<e:Group x="455" y="1051.03" anchorOffsetX="0" width="130">
+		<e:Image x="0" y="0" source="zhaohuanquan_png" width="50" height="50"/>
+		<e:Label id="lab_quannum" text="x1" x="64.67000000000002" fontFamily="SimHei" size="22" bottom="1" anchorOffsetY="0" height="49" verticalAlign="bottom"/>
+		<e:layout>
+		<e:HorizontalLayout horizontalAlign="center" gap="8"/>
+		</e:layout>
+	</e:Group>
+	<e:Rect id="rec_gold" width="130" height="86" x="247" y="1047.03" alpha="0"/>
+	<e:Rect id="rec_quan" width="130" height="86" x="455" y="1047.03" alpha="0"/>
+</e:Skin>

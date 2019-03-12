@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="game_genban" width="276.17" height="137.75" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="274.53" height="60" ellipseWidth="30" anchorOffsetY="0" x="0" fillColor="0x2b2b2b" fillAlpha="0.5" anchorOffsetX="0" bottom="0"/>
+	<e:Group id="group_ren" x="8" y="81.25" visible="false">
+		<e:Image id="img_icon" source="icon1_png" x="12.369999999999997" width="50" height="50" y="4"/>
+		<e:Label id="lab_name" text="Label" x="77" y="5" fontFamily="SimHei" size="22" textColor="0xdbdbdb"/>
+		<e:Label id="lab_note" text="正在给您胜多负少" x="77" y="32.25" fontFamily="SimHei" size="20" textColor="0xdbdbdb"/>
+	</e:Group>
+	<e:Image id="img" source="genban_jia_png" y="0" horizontalCenter="-0.08500000000000796"/>
+	<e:Label id="lab" text="抓人给您丛林探险" y="96" horizontalCenter="0" fontFamily="SimHei" size="28"/>
+</e:Skin>

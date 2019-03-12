@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="beitou" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillAlpha="0.4"/>
+	<e:Image source="hy_bg_png" y="371" horizontalCenter="0"/>
+	<e:Label id="lab_title" text="好友偷取了您的红包" y="398" fontFamily="SimHei" textColor="0xb97628" size="36" bold="true" horizontalCenter="0"/>
+	<e:Label text="偷取您的红包" y="569" fontFamily="SimHei" textColor="0xB97628" size="24" x="190"/>
+	<e:Label id="lab_num" text="0.11元" y="569" fontFamily="SimHei" textColor="0xE76565" size="24" x="414"/>
+	<e:Image id="img_close" source="hy_guanbi_png" x="617" y="386"/>
+	<e:Image id="img_money" y="553.29" scaleX="0.6" scaleY="0.6" source="hongbao2_png" x="366"/>
+	<e:Group y="505" horizontalCenter="0">
+		<e:Label text="你的好友" y="6" fontFamily="SimHei" textColor="0xB97628" size="24" x="0"/>
+		<e:Image id="img_icon" width="35" height="35" y="0" x="121" source="icon1_png"/>
+		<e:Label id="lab_text" text="你抢到了" y="6" fontFamily="SimHei" size="24" x="170" textColor="0xe76565"/>
+		<e:Label id="labs" text="" y="16" fontFamily="SimHei" textColor="0xB97628" size="24" x="10"/>
+		<e:layout>
+			<e:HorizontalLayout gap="8" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="img_yes" source="btn_yes_png" y="686" horizontalCenter="0"/>
+</e:Skin>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="genban" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_beibao_item_png" width="770" height="1350" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="抓跟班" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Label id="lab_huan" text="换一批" y="79.96" fontFamily="SimHei" size="30" horizontalCenter="292" alpha="0.7"/>
+	<e:Group id="group" width="750" height="797.69" x="0" y="220" anchorOffsetX="0" anchorOffsetY="0">
+		<e:List id="list">
+			<e:layout>
+				<e:TileLayout verticalGap="10" requestedRowCount="3" requestedColumnCount="3" horizontalGap="20"/>
+			</e:layout>
+		</e:List>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+	<e:Rect height="254.12" y="1077" fillColor="0xdff7ff" anchorOffsetY="0" left="0" right="0"/>
+	<e:Rect height="3" y="1074" left="0" right="0" fillColor="0xf6b37f"/>
+	<e:Rect width="20" height="20" x="40" y="1126" fillColor="0xef8e40" ellipseWidth="20"/>
+	<e:Rect width="20" height="20" x="40" y="1184.06" fillColor="0xEF8E40" ellipseWidth="20"/>
+	<e:Rect width="20" height="20" x="40" y="1243.39" fillColor="0xEF8E40" ellipseWidth="20"/>
+	<e:Label text="雇佣的跟班只能为您工作12个小时" x="88" y="1121" textColor="0xdd7b2c" fontFamily="SimHei"/>
+	<e:Label text="跟班工作12小时后跟班累坏,只能解雇" x="88" y="1179.06" textColor="0xDD7B2C" fontFamily="SimHei"/>
+	<e:Label text="跟班累坏后,即使资源未满,也不会继续产出资源" x="88" y="1238.39" textColor="0xDD7B2C" fontFamily="SimHei"/>
+	<e:Label text="抓捕跟班为自己获得更多利益" y="159" fontFamily="SimHei" textColor="0x565656" horizontalCenter="0"/>
+</e:Skin>

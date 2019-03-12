@@ -1,3 +1,0 @@
-# helloword
-hehe
-hehe2

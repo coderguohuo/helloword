@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="geren" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jianbian_png" anchorOffsetX="0" left="0" right="150" top="0" bottom="0"/>
+	<e:Rect id="rec_close" width="150" height="1334" x="600" y="0" fillColor="0x878787" fillAlpha="0"/>
+	<e:Image source="icon1_png" x="30" y="122" width="121" height="121"/>
+	<e:Image id="img_icon" source="bg_icon_png" x="30" y="122" width="121" height="121"/>
+	<e:Label id="lab_name" text="Label" x="172" y="139" size="36" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Label text="LV:" x="33" y="272" size="30" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Label id="lab_lv" text="1" x="80.01" y="272" size="30" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Label text="ID:" x="178" y="202" size="24" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Label id="lab_id" text="Label" x="223.13" y="202" size="24" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Rect width="300" height="30" x="130" y="269" fillColor="0x666e6b" ellipseWidth="25"/>
+	<e:Rect id="rec_jingyan" width="158.8" height="30" x="130" y="269" ellipseWidth="25" anchorOffsetX="0" fillColor="0xffe663"/>
+	<e:Rect id="rec_sehngji" width="100" height="45" x="470" y="259" fillColor="0xf8b35e" strokeColor="0xc98532" strokeWeight="1" ellipseWidth="40"/>
+	<e:Label text="升级" x="491" y="266" fontFamily="SimHei" touchEnabled="false"/>
+	<e:Image source="img_tili_png" x="40" y="338"/>
+	<e:Rect width="200" height="30" x="82" y="339" ellipseWidth="25" fillAlpha="0.2"/>
+	<e:Rect width="200" height="30" x="361" y="339" ellipseWidth="25" fillAlpha="0.2"/>
+	<e:Image source="zuanshi_png" x="320.64" y="336.01"/>
+	<e:Image id="img_add_tili" source="jiahao_png" x="253.13" y="335.34"/>
+	<e:Label id="lab_tili" text="100/100" x="82.67" y="341.67" size="24" anchorOffsetX="0" width="199.66" textAlign="center" touchEnabled="false"/>
+	<e:Label id="lab_zuanshi" text="1" x="362.32" y="342" size="24" anchorOffsetX="0" width="199.66" textAlign="center" touchEnabled="false"/>
+	<e:Group x="0" y="426">
+		<e:Group id="group_zhuren" x="0" y="0" height="100">
+			<e:Rect width="600" height="100" x="0" y="0" fillColor="0xffffff"/>
+			<e:Rect id="rec_jiejiu" width="120" height="45" x="463" ellipseWidth="45" strokeWeight="1.5" fillAlpha="0" verticalCenter="0"/>
+			<e:Label text="主人" x="33" y="37" textColor="0x262626" fontFamily="SimHei" size="26"/>
+			<e:Label text="求解救" x="463.8" y="38.68" textColor="0x262626" fontFamily="SimHei" size="26" anchorOffsetX="0" width="120" textAlign="center" touchEnabled="false"/>
+			<e:Label id="lab_zhuren" text="主人" x="191" y="37" fontFamily="SimHei" size="26" textColor="0xec3939"/>
+			<e:Image id="img_zhuren" width="40" height="40" x="130" y="30"/>
+		</e:Group>
+		<e:Group id="group_guanjia" x="0" y="139" height="100" width="600">
+			<e:Image source="ico_guanjia_png" x="30" y="14"/>
+			<e:Label text="管家" x="120" textColor="0x262626" fontFamily="SimHei" size="26" verticalCenter="0"/>
+			<e:Label text="雇个管家帮你种地吧" x="362.40000000000003" fontFamily="SimHei" size="24" verticalCenter="0" textColor="0x999999" right="50"/>
+		</e:Group>
+		<e:Group id="group_yaoqing" x="10" y="149" height="100" width="600">
+			<e:Image x="30" y="14" source="ico_yaoqing_png"/>
+			<e:Label text="邀请" x="120" textColor="0x262626" fontFamily="SimHei" size="26" verticalCenter="0"/>
+			<e:Label text="邀请好友解锁农场更多土地" x="362.40000000000003" fontFamily="SimHei" size="24" verticalCenter="0" textColor="0x999999" right="50"/>
+		</e:Group>
+		<e:Group id="group_gonggao" x="20" y="159" height="100" width="600">
+			<e:Image x="30" y="14" source="ico_gonggao_png"/>
+			<e:Label text="公告" x="120" textColor="0x262626" fontFamily="SimHei" size="26" verticalCenter="0"/>
+			<e:Label text="查看公告详情" x="362.40000000000003" fontFamily="SimHei" size="24" verticalCenter="0" textColor="0x999999" right="50"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="img_needUp" source="needshengji_png" x="549.5" y="244" visible="false"/>
+	<e:Image id="img_add_zuanshi" source="jiahao_png" x="531" y="335.16"/>
+</e:Skin>

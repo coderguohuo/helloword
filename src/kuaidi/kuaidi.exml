@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="kuaidi" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image horizontalCenter="0" source="bg_menu_png" y="267"/>
+	<e:Image id="img" x="118" y="393" width="150" height="150" source=""/>
+	<e:Image id="img_close" source="close_png" x="615.01" y="275.67"/>
+	<e:Image y="301.67" horizontalCenter="0" source="text12_png"/>
+	<e:Label id="lab_name" text="瓷肌面膜" y="409" fontFamily="SimHei" size="35" x="301" anchorOffsetX="0" textColor="0x4f8188"/>
+	<e:Label id="lab_num" text="8 元" y="477" fontFamily="SimHei" size="26" x="373.8" textColor="0x23b9ef"/>
+	<e:Label text="数量:" y="477" fontFamily="SimHei" size="26" x="301" textColor="0x23B9EF"/>
+	<e:Rect width="710" height="1" y="566" fillAlpha="0.4" horizontalCenter="0" fillColor="0xdcdcdc"/>
+	<e:Group y="594" width="520" horizontalCenter="0">
+		<e:Group width="520" height="60" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Label text="收件人" fontFamily="SimHei" textColor="0x000000" size="26" x="11" verticalCenter="0"/>
+			<e:Rect width="400" height="60" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" verticalCenter="0" ellipseWidth="30"/>
+			<e:EditableText id="ed_name" width="386" height="36" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" verticalCenter="0" textAlign="center" verticalAlign="middle" size="26"/>
+		</e:Group>
+		<e:Group width="520" height="60" x="1" y="50" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Label text="电  话" fontFamily="SimHei" textColor="0x000000" size="26" x="11" verticalCenter="0"/>
+			<e:Rect width="400" height="60" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" verticalCenter="0" ellipseWidth="30"/>
+			<e:EditableText id="ed_pohone" width="388" height="36" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" verticalCenter="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" size="26"/>
+		</e:Group>
+		<e:Group width="520" height="60" x="11" y="60" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Label text="地  址" fontFamily="SimHei" textColor="0x000000" size="26" x="11" y="15"/>
+			<e:Rect width="190" height="60" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" ellipseWidth="30" anchorOffsetY="0" verticalCenter="0"/>
+			<e:Rect width="190" height="60" x="328.5" fillColor="0xf0f0f0" anchorOffsetX="0" ellipseWidth="30" anchorOffsetY="0" verticalCenter="0"/>
+			<e:EditableText id="ed_sheng" width="174.5" height="36.5" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" textAlign="left" size="26" fontFamily="SimHei" multiline="true" lineSpacing="6" verticalCenter="0.5" promptColor="0x999999" prompt="省" verticalAlign="middle"/>
+			<e:EditableText id="ed_shi" width="171.5" height="36.5" text="" x="342.25" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" textAlign="left" size="26" fontFamily="SimHei" multiline="true" lineSpacing="6" verticalCenter="0.5" promptColor="0x999999" prompt="市" verticalAlign="middle"/>
+		</e:Group>
+		<e:Group width="520" height="60" x="21" y="70" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Rect width="400" height="60" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" ellipseWidth="30" anchorOffsetY="0" verticalCenter="0"/>
+			<e:EditableText id="ed_qu" width="384" height="36.5" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" textAlign="left" size="26" fontFamily="SimHei" multiline="true" lineSpacing="6" verticalCenter="0.5" promptColor="0x999999" prompt="区/县" verticalAlign="middle"/>
+		</e:Group>
+		<e:Group width="520" height="60" x="41" y="90" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Rect width="400" height="60" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" ellipseWidth="30" anchorOffsetY="0" verticalCenter="0"/>
+			<e:EditableText id="ed_zhen" width="388" height="36.5" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" textAlign="left" size="26" fontFamily="SimHei" multiline="true" lineSpacing="6" verticalCenter="0.5" promptColor="0x999999" prompt="镇" verticalAlign="middle"/>
+		</e:Group>
+		<e:Group width="520" height="130" x="31" y="80" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Rect width="400" height="130" x="120" fillColor="0xf0f0f0" anchorOffsetX="0" ellipseWidth="30" anchorOffsetY="0" y="0"/>
+			<e:EditableText id="ed_jie" width="387" height="118" text="" x="127.8" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" textAlign="left" size="25" fontFamily="SimHei" multiline="true" lineSpacing="6" promptColor="0x999999" prompt="街道" y="8.5"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="10"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="btn_yes" source="btn_kuaidi_png" y="1093.67" horizontalCenter="0"/>
+</e:Skin>

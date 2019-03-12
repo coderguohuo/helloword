@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="gonggao" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillColor="0xF3F3F3"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="公告详情" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Rect width="690" height="900" y="182.15" ellipseWidth="40" fillColor="0xffffff" horizontalCenter="0"/>
+	<e:Label id="lab_title" text="" x="65" y="209.91" textColor="0x333333" anchorOffsetX="0" width="89"/>
+	<e:Scroller width="630" height="780" y="279" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Group>
+			<e:Label id="lab_content" text="" x="44" y="71" textColor="0x333333" anchorOffsetX="0" width="630"/>
+			<e:Label id="lab_time" text="" x="60" y="101" textColor="0x333333" anchorOffsetX="0" width="630" textAlign="right"/>
+			<e:layout>
+				<e:VerticalLayout gap="40"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

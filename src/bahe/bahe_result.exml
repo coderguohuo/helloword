@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="bahe_result" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.3"/>
+	<e:Label text="领取奖励" x="305" y="1226" fontFamily="SimHei"/>
+	<e:Rect id="rec_yes" width="260" height="80" y="1201" ellipseWidth="30" fillAlpha="0" strokeWeight="2" strokeColor="0xFFFFFF" x="235"/>
+	<e:Image id="img_title" y="270" x="42.00000000000004" source="title_red_png"/>
+	<e:Image id="img_bg" x="0" source="dadou_shibai1_png" verticalCenter="0"/>
+	<e:Image id="img_lab" source="dadou_shibai_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="lab_title" text="红包争夺战" y="309.00000000000006" fontFamily="SimHei" size="36" x="285.00000000000006"/>
+	<e:Group y="865.6699999999998" horizontalCenter="0">
+		<e:Label text="成功邀请" x="0" y="1.1368683772161603e-13" textColor="0xff832d" size="28" stroke="2" strokeColor="0xffffff" fontFamily="SimHei"/>
+		<e:Label id="lab_num" text="1" x="106.67000000000002" y="1.1368683772161603e-13" size="28" fontFamily="SimHei" textColor="0x00aeff" stroke="2" strokeColor="0xffffff"/>
+		<e:Label text="位好友" x="131.17000000000002" y="15.000000000000114" textColor="0xff832d" size="28" stroke="2" strokeColor="0xffffff" fontFamily="SimHei"/>
+		<e:layout>
+		<e:HorizontalLayout gap="8"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

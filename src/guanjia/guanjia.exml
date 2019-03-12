@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="guanjia" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillColor="0xF3F3F3"/>
+	<e:Image source="bg_beibao_item_png" width="770" height="1350" horizontalCenter="0" verticalCenter="0"/>
+	<e:Group x="0" y="208" height="150">
+		<e:Rect id="rec_add0" width="750" x="0" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFFFFFF" top="0" bottom="0"/>
+		<e:Label text="购买一个月" textColor="0x333333" fontFamily="SimHei" touchEnabled="false" verticalCenter="0" x="148"/>
+		<e:Image id="btn_buy" source="btn_buy_png" x="556" verticalCenter="0"/>
+		<e:Image source="guanjia_icon_png" x="30" verticalCenter="0"/>
+	</e:Group>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="购买管家" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Label text="购买时间" x="31" y="153" textColor="0x333333" fontFamily="SimHei"/>
+</e:Skin>

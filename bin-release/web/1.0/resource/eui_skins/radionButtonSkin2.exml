@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.RadioButtonSkin2" states="up,down,disabled,upAndSelected,downAndSelected,disabledAndSelected" xmlns:e="http://ns.egret.com/eui">
+    <e:Group width="100%" height="100%">
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+        <e:Image fillMode="scale" alpha="1" alpha.disabled="0.5" alpha.down="0.7"
+                 source="rad_unselect_png"
+                 source.upAndSelected="rad_select_png"
+                 source.downAndSelected="rad_select_png"
+                 source.disabledAndSelected="rad_unselect_png"/>
+        <e:Label id="labelDisplay" size="30"
+                 textAlign="center" verticalAlign="middle"
+                 fontFamily="SimHei" text="123" textColor="0xb66e16" left="8" right="8" top="8" bottom="8" 
+               
+                    textColor.upAndSelected="0xffffff"
+                 textColor.downAndSelected="0xffffff"
+                 textColor.disabledAndSelected="0xb66e16"
+                 
+                  strokeColor="0xd07421" 
+                   stroke="0"
+                      stroke.upAndSelected="2"
+                 stroke.downAndSelected="2"/>
+    </e:Group>
+</e:Skin>

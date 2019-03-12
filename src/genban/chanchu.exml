@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="chanchu" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_menu_png" y="267" horizontalCenter="0"/>
+	<e:Label text="产出" y="399.21" fontFamily="SimHei" size="30" textColor="0x333333" horizontalCenter="0"/>
+	<e:Rect width="288" height="1" x="21.83" y="413.71" fillAlpha="0.4" fillColor="0xDCDCDC" anchorOffsetX="0"/>
+	<e:Rect width="289.5" height="1" x="441.83" y="413.71" fillAlpha="0.4" anchorOffsetX="0" fillColor="0xDCDCDC"/>
+	<e:Image id="img_close" source="close_png" x="628.88" y="275.11"/>
+
+    	<e:Group id="group_beibao" width="750" y="478" anchorOffsetX="0" minHeight="540" scaleX="0.9" scaleY="0.9" anchorOffsetY="0" height="341.35" x="34">
+				<e:List id="list_beibao" x="0" scaleX="1" scaleY="1">
+					<e:layout>
+						<e:TileLayout requestedColumnCount="5" horizontalAlign="left" verticalAlign="top" horizontalGap="0" verticalGap="0" orientation="rows"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+	<e:Image id="img_lingqu" source="btn_tiqu_png" y="872" horizontalCenter="0"/>
+	<e:Group id="group_genban" x="20" y="997.4">
+		<e:Rect width="710" height="190" y="0" fillColor="0xf0f0f0" ellipseWidth="30" anchorOffsetY="0" x="0"/>
+		<e:Rect width="710" height="20" y="0" fillColor="0xF0F0F0" anchorOffsetY="0" x="0"/>
+		<e:Rect width="670" height="150" y="20" ellipseWidth="30" anchorOffsetY="0" fillColor="0xffffff" x="18"/>
+		<e:Image id="img_icon" source="icon1_png" x="53.829999999999984" y="45.000000000000114" width="100" height="100"/>
+		<e:Image source="bg_icon_png" x="51" y="41.58000000000004" anchorOffsetX="0" width="105" height="105" touchEnabled="false"/>
+		<e:Label id="lab_jiegu" text="解雇跟班" x="518.38" y="80.00000000000011" textColor="0xeb5959" fontFamily="SimHei" size="26" anchorOffsetX="0" width="146" textAlign="center"/>
+		<e:Rect id="rec_jiegu" width="150" height="60" x="515.88" y="62.58000000000004" strokeColor="0xeb5959" strokeWeight="2" fillAlpha="0" ellipseWidth="30"/>
+		<e:Label id="lab_name" text="Label" x="173" y="53.60000000000002" textColor="0x333333" fontFamily="SimHei" size="28"/>
+		<e:Label id="lab_note" text="Label" x="173" y="108.58000000000004" textColor="0x333333" fontFamily="SimHei" size="28"/>
+	</e:Group>
+	<e:Group id="group_nogenban" y="997.4" horizontalCenter="0" visible="false">
+		<e:Rect width="710" height="190" y="0" fillColor="0xF0F0F0" ellipseWidth="30" anchorOffsetY="0" x="0"/>
+		<e:Rect width="710" height="20" y="0" fillColor="0xF0F0F0" anchorOffsetY="0" x="0"/>
+		<e:Rect width="670" height="150" y="20" ellipseWidth="30" anchorOffsetY="0" fillColor="0xFFFFFF" x="18"/>
+		<e:Image x="53.829999999999984" y="45.000000000000114" width="100" height="100" source="add_png" alpha="0.7"/>
+		<e:Label text="抓个新的" x="538.88" y="80.00000000000011" textColor="0xEB5959" fontFamily="SimHei" size="26"/>
+		<e:Rect id="rec_zhuagenban" width="150" height="60" x="515.88" y="62.58000000000004" strokeColor="0xEB5959" strokeWeight="2" fillAlpha="0" ellipseWidth="30"/>
+		<e:Label id="lab_work" text="" x="173" y="53.60000000000002" textColor="0x333333" fontFamily="SimHei" size="28"/>
+		<e:Label text="去抓个新的跟班吧" x="173" y="108.58000000000004" textColor="0x333333" fontFamily="SimHei" size="28"/>
+	</e:Group>
+	<e:Image id="img_title" source="text_buyu_png" y="291" horizontalCenter="0"/>
+	<e:Label id="lab2" text="跟班每隔一段时间会产出丰厚资源" y="810" textColor="0x999999" horizontalCenter="0" size="24" fontFamily="SimHei" visible="false"/>
+	<e:Image id="img_yiman" source="chanchuyiman_png" y="439.7" horizontalCenter="0" visible="false"/>
+</e:Skin>

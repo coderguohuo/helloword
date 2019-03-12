@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GetPinDouItemSkin" width="750" height="146" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="daoju,wupin">
+	<e:Rect width="750" height="146" y="0" fillAlpha="1" strokeAlpha="1" strokeWeight="1" strokeColor="0xDCDCDC" horizontalCenter="0" fillColor="0xffffff"/>
+	<e:Rect width="700" height="2" y="143.96" fillAlpha="0" strokeAlpha="1" strokeWeight="1" strokeColor="0xdcdcdc" horizontalCenter="0"/>
+    <e:Image id="imgIcon" x="25.76" visible.wupin="false"  source="icon_pindou_nor_png" verticalCenter="0"/>
+    <e:Label id="labName" text="分享领豆" x="186.33" y="28.44" stroke="0" strokeColor="0x7f7b7b" anchorOffsetX="0"
+             size="32" fontFamily="SimHei"  textColor="0x333333"/>
+	<e:Label id="labName0" text="奖励" x="190.27" y="74.8" stroke="0" strokeColor="0x7F7B7B" anchorOffsetX="0" size="24" fontFamily="SimHei" textColor="0x666666"/>
+	<e:Label id="labDes" text=",每天领取1次" x="315.87" y="77.8" stroke="0" strokeColor="0x7F7B7B" anchorOffsetX="0" size="24" fontFamily="SimHei" textColor="0x666666"/>
+	<e:Label id="labDouNum" text="100" x="237.25" y="75.8" stroke="0" strokeColor="0x7F7B7B" anchorOffsetX="0" size="24" fontFamily="SimHei" textColor="0x19a0ff"/>
+	<e:Image id="imgDou" source="icon_dou_nor_png" x="278.5" y="77.5"/>
+	<e:Group id="grpDo" x="563.19" y="39.18">
+		<e:Rect id="rectBg" width="138" height="60" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xf5f5f5"/>
+		<e:Label id="btnName" text="去完成" stroke="0" strokeColor="0x7F7B7B" anchorOffsetX="0" size="32" fontFamily="SimHei" textColor="0x333333" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

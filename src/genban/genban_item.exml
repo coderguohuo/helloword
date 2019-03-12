@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="genban_item" width="180" height="255" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xffffff" ellipseWidth="40"/>
+	<e:Image id="img_icon" source="icon1_png" y="31.5" horizontalCenter="0" width="114" height="114"/>
+	<e:Image source="bg_icon_png" y="31.8" horizontalCenter="0.5" width="114" height="114"/>
+	<e:Image id="img_youzhuren" source="genban_youzhuren_png" x="86.5" y="36.8"/>
+	<e:Rect width="106.55" height="30.75" y="110.3" anchorOffsetX="0" alpha="0.5" ellipseWidth="10" horizontalCenter="1.5" anchorOffsetY="0"/>
+	<e:Label id="lab_name" text="" x="38.5" y="111.68" size="26" anchorOffsetX="0" width="105.75" textAlign="center" fontFamily="SimHei" height="28"/>
+	<e:Rect id="rec_yes" width="140" height="40" y="191" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" ellipseWidth="40" fillColor="0xfd405c"/>
+	<e:Label text="抢 他" x="38.8" y="198" size="26" anchorOffsetX="0" width="105.75" textAlign="center" fontFamily="SimHei" touchEnabled="false"/>
+</e:Skin>

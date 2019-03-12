@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="chongzhi" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillColor="0xF3F3F3"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="钱 包" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Label text="购买钻石" x="31" y="156" size="26" textColor="0x333333" fontFamily="SimHei"/>
+	<e:Label text="不鼓励未成年人使用本服务,未成年人应请监护人操作或在监护人的监护下操作" y="1205.71" size="22" fontFamily="SimHei" textColor="0x999999" width="600" horizontalCenter="0" textAlign="center" lineSpacing="8"/>
+	<e:Group x="0" y="153" visible="false">
+		<e:Label text="支付方式" x="31" y="0" size="26" textColor="0x333333" fontFamily="SimHei"/>
+		<e:Rect id="rec_alipay" width="250" height="120" x="0" y="43" fillColor="0xffffff"/>
+		<e:Rect id="rec_wechat" width="250" height="120" x="250" y="43" fillColor="0xFFFFFF"/>
+		<e:Rect id="rec_bank" width="250" height="120" x="500" y="43" fillColor="0xFFFFFF"/>
+		<e:Image id="img_type" source="chongzhi_select_png" x="0" y="43" touchEnabled="false"/>
+		<e:Image source="img_wechat_png" x="310" y="64.33000000000001" touchEnabled="false"/>
+		<e:Image source="img_bank_png" x="560" y="63.00999999999999" touchEnabled="false"/>
+		<e:Image source="img_alipay_png" x="60" y="61" touchEnabled="false"/>
+		<e:Label text="支付宝支付" x="70" y="130" size="22" textColor="0x333333" fontFamily="SimHei" touchEnabled="false"/>
+		<e:Label text="微信支付" x="331" y="130" size="22" textColor="0x333333" fontFamily="SimHei" touchEnabled="false"/>
+		<e:Label text="银行卡支付" x="570" y="130" size="22" textColor="0x333333" fontFamily="SimHei" touchEnabled="false"/>
+	</e:Group>
+	<e:Group y="210.33" width="720" x="20">
+		<e:Group x="0" y="0" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi1_png"/>
+			<e:Image id="btn1" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="1"/>
+			<e:Label text="x 10" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 1.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="10" y="10" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0" name="10"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi2_png"/>
+			<e:Image id="btn2" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0"/>
+			<e:Label text="x 100" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 10.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="20" y="20" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi3_png"/>
+			<e:Image id="btn3" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="200"/>
+			<e:Label text="x 200" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 20.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="30" y="30" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi4_png"/>
+			<e:Image id="btn4" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="50"/>
+			<e:Label text="x 500" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 50.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="40" y="40" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi5_png"/>
+			<e:Image id="btn5" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="100"/>
+			<e:Label text="x 1000" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 100.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="50" y="50" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi6_png"/>
+			<e:Image id="btn6" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="200"/>
+			<e:Label text="x 2000" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 200.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="60" y="60" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi6_png"/>
+			<e:Image id="btn7" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="500"/>
+			<e:Label text="x 5000" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 500.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="70" y="70" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi6_png"/>
+			<e:Image id="btn8" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="1000"/>
+			<e:Label text="x 10000" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 1000.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group x="80" y="80" width="220" height="300">
+			<e:Image source="bg_chongzhi_png" x="0" y="0"/>
+			<e:Image horizontalCenter="1" verticalCenter="-37" source="zuanshi6_png"/>
+			<e:Image id="btn9" source="btn_chongzhi_bg_png" y="237.67" horizontalCenter="0" name="2000"/>
+			<e:Label text="x 20000" y="16.67" stroke="2" strokeColor="0x217693" size="25" fontFamily="SimHei" anchorOffsetX="0" width="189.59" textAlign="right" horizontalCenter="0"/>
+			<e:Label text="¥ 2000.00" y="252.51" stroke="2" strokeColor="0x853602" fontFamily="SimHei" size="25" touchEnabled="false" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:layout>
+			<e:TileLayout requestedColumnCount="3" requestedRowCount="3" horizontalGap="25" verticalGap="15"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

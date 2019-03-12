@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="zhuanpan_tishi" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillAlpha="0.4"/>
+	<e:Image source="hy_bg_png" y="371" horizontalCenter="0"/>
+	<e:Label id="lab_title" text="金币不足" y="398" fontFamily="SimHei" textColor="0xb97628" size="36" bold="true" horizontalCenter="0"/>
+	<e:Label id="lab_note" text="请先种植农场获得金币" y="610" fontFamily="SimHei" textColor="0xB97628" size="24" bold="true" horizontalCenter="0.5"/>
+	<e:Image id="img_close" source="hy_guanbi_png" x="617" y="386"/>
+	<e:Image id="img_yes" source="btn_yes_png" y="686" horizontalCenter="0"/>
+	<e:Image id="img" source="gold2_png" y="500" width="80" height="80" horizontalCenter="0"/>
+</e:Skin>

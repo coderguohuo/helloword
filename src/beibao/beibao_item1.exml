@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="beibao_item1" width="152" height="180" xmlns:e="http://ns.egret.com/eui" states="daoju,wupin">
+    <e:Image id="img_bg" source="bg_beibao_item_png" x="0" y="0" visible.wupin="false" />
+    <e:Rect width="152" height="180" x="0" y="0" fillAlpha="0" strokeAlpha="1" strokeWeight="1" strokeColor="0xdcdcdc" />
+    <e:Label id="lab_num" text="" x="3" y="4.2" stroke="2" strokeColor="0x7f7b7b" anchorOffsetX="0" width="143"
+             height="26" size="26" textAlign="right" fontFamily="SimHei" />
+    <e:Label id="lab_name" text="" y="151" textColor="0x333333" horizontalCenter="0" fontFamily="SimHei" size="26" />
+    <e:Group id="group" width="115" height="115" horizontalCenter="0" verticalCenter="0">
+        <e:Image id="img" horizontalCenter="0" verticalCenter="0" maxHeight="120" maxWidth="120" x="60" y="60"
+                 scaleX="1" scaleY="1" />
+    </e:Group>
+</e:Skin>

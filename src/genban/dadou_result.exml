@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="dadou_result" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+	<e:Group id="group_yes" x="10" y="125">
+		<e:Image source="dadou_shibai2_png" x="0" y="0"/>
+		<e:Image source="dadou_chenggong3_png" y="149" x="32"/>
+		<e:Group y="673.0000000000001" horizontalCenter="0">
+			<e:Label text="成功抓捕" x="0" y="0" textColor="0xff832d" stroke="2" strokeColor="0xffffff" fontFamily="SimHei"/>
+			<e:Label id="lab_name" text="" x="144.3000000000001" y="0" strokeColor="0xffffff" stroke="2" fontFamily="SimHei" textColor="0x00aeff"/>
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" gap="8"/>
+			</e:layout>
+		</e:Group>
+		<e:Image source="dadouchenggong_png" x="207" y="467"/>
+		<e:Label text="让他干活" x="305" y="1095" fontFamily="SimHei"/>
+		<e:Rect id="rec_yes" width="260" height="80" y="1070" ellipseWidth="30" fillAlpha="0" strokeWeight="2" strokeColor="0xffffff" x="235"/>
+	</e:Group>
+	<e:Group id="group_no" x="0" y="204" visible="false">
+		<e:Image source="dadou_shibai3_png" y="0" x="42"/>
+		<e:Image source="dadou_shibai1_png" y="0" x="0"/>
+		<e:Image source="dadou_shibai_png" x="195.5" y="301.5"/>
+		<e:Label text="抓捕失败" y="594" textColor="0xff832d" fontFamily="SimHei" stroke="2" strokeColor="0xffffff" x="315"/>
+		<e:Label text="关 闭" y="1016" fontFamily="SimHei" x="338"/>
+		<e:Rect id="rec_no" width="260" height="80" y="991" strokeWeight="2" strokeColor="0xffffff" fillAlpha="0" ellipseWidth="30" x="245"/>
+	</e:Group>
+</e:Skin>

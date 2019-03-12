@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="zhuanpan_result" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.3"/>
+	<e:Image id="img_beibao" source="main_beibao_png" x="592" y="78" visible="false"/>
+	<e:Group id="group" anchorOffsetX="106" anchorOffsetY="132" x="375" y="667" width="212" height="264">
+			<e:Image id="img_bg" x="-269" verticalCenter="0" y="-403" scaleX="1" scaleY="1" source="dadou_shibai2_png"/>
+		<e:Image source="zhuanpan_result_bg_png" y="0" x="0"/>
+		<e:Group y="215.5" horizontalCenter="0">
+			<e:Label id="lab_name" text="Label" x="0" y="0" textColor="0x333333" size="24"/>
+			<e:Label id="lab_num" text="Label" x="59" y="0" textColor="0x333333" size="24"/>
+			<e:layout>
+			<e:HorizontalLayout gap="8" horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+		<e:Group width="186.66" height="188.66" x="13.670000000000073" y="15.669999999999959" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image id="img" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

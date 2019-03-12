@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="bahe" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_bahe_jpg" x="0" y="0"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="拔河比赛" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Image source="bahe_hong_png" x="30" y="152"/>
+	<e:Image source="bahe_lan_png" x="30" y="1022"/>
+	<e:Image id="btn_yaoqing" source="btn_yaoqingzhuli_png" y="1221" horizontalCenter="0"/>
+	<e:Scroller width="654.55" height="92.42" x="53.33" y="211" anchorOffsetY="0" anchorOffsetX="0">
+		<e:Group id="group_other" anchorOffsetX="0" width="209.09">
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="10"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<e:Scroller width="655.87" height="92.42" x="52.67" y="1081.57" anchorOffsetY="0" anchorOffsetX="0">
+		<e:Group id="group_me" anchorOffsetX="0" width="209.09">
+			<e:layout>
+				<e:HorizontalLayout gap="10" horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<e:Rect width="200" height="50" x="359.33" y="586" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x424242" alpha="0.7" ellipseWidth="30"/>
+	<e:Label id="lab_time" text="00:00:00" x="400.83" y="596"/>
+	<e:Image id="img_jindu_my" source="bahejindu_png" x="270" y="1033" anchorOffsetX="0" width="250"/>
+	<e:Image id="img_jindu_other" source="bahejindu_png" x="270" y="162.92" anchorOffsetX="0" width="250"/>
+	<e:Label id="lab_jindu_other" text="1" x="270" y="164.8" fontFamily="SimHei" size="26" width="250" textAlign="center"/>
+	<e:Label id="lab_jindu_my" text="1" x="270.8" y="1035.6" fontFamily="SimHei" size="26" width="250" textAlign="center"/>
+</e:Skin>

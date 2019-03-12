@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="loding" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jpg" left="0" right="0" top="0" bottom="0"/>
+	<e:Image source="jindutiao_bg_png" y="521.18" horizontalCenter="0.5"/>
+	<e:Image id="jindu" source="jindutiao_png" x="218.31" y="557.19" scaleX="1"/>
+	<e:Label id="textField" text="Loading..." y="480.18" horizontalCenter="0"/>
+</e:Skin>

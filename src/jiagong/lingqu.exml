@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="lingqu" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_lingqu_png" x="0" y="0"/>
+	<e:Image id="img_yes" source="btn_lingqu_png" x="225" y="1040"/>
+	<e:Image id="img" width="280" height="280" verticalCenter="0" horizontalCenter="0"/>
+	<e:Label id="lab_name" text="Label" x="215.6" y="840" anchorOffsetX="0" width="318.6" textAlign="center" size="34"/>
+</e:Skin>

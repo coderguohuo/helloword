@@ -1,0 +1,12 @@
+{
+    "useClip": false,
+    "maxImageWidth": 2048,
+    "maxImageHeight": 2048,
+    "defaultResPath": "d:\\EgretWorkPlace\\HongBao_ZhengShi\\resource\\default.res.json",
+    "packGroups": {
+        "preload": true,
+        "loding": false,
+        "sound": false,
+        "game": true
+    }
+}

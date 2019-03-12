@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="shengji_chenggong" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.5"/>
+	<e:Image source="huangguang_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="xiaolanbam_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="bg_geren_lv_png" x="183.75" y="492"/>
+	<e:Image source="bg_geren_lv_png" x="472" y="492"/>
+	<e:Label text="LV" x="213.25" y="512.5" size="20"/>
+	<e:Label id="lab_lvlast" text="1" x="200.25" y="534.5" size="20" anchorOffsetX="0" width="49.5" textAlign="center" fontFamily="MingLiU"/>
+	<e:Label text="LV" x="503.25" y="511.5" size="20"/>
+	<e:Label id="lab_lv" text="1" x="490.25" y="533.5" size="20" anchorOffsetX="0" width="49.5" textAlign="center" fontFamily="MingLiU"/>
+	<e:Rect width="182.5" height="250" x="135" y="597.33" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x72cef5"/>
+	<e:Image source="ico_baoji_png" x="154.5" y="783" scaleX="0.5" scaleY="0.5"/>
+	<e:Image source="ico_qizhi_png" x="154.5" y="702.33" scaleX="0.5" scaleY="0.5"/>
+	<e:Image source="ico_shengming_png" x="154.5" y="618.67" scaleX="0.5" scaleY="0.5"/>
+	<e:Label id="lab_hpLast" text="1000" x="213.25" y="623.67" stroke="2" strokeColor="0x0a98a8"/>
+	<e:Label id="lab_qizhiLast" text="1000" x="213" y="707.33" stroke="2" strokeColor="0x0A98A8"/>
+	<e:Label id="lab_baojiLast" text="1000" x="214.5" y="788" stroke="2" strokeColor="0x0A98A8"/>
+	<e:Rect width="182.5" height="250" x="423.25" y="597.33" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x72CEF5"/>
+	<e:Image source="ico_baoji_png" x="442.75" y="783" scaleX="0.5" scaleY="0.5"/>
+	<e:Image source="ico_qizhi_png" x="442.75" y="702.33" scaleX="0.5" scaleY="0.5"/>
+	<e:Image source="ico_shengming_png" x="442.75" y="618.67" scaleX="0.5" scaleY="0.5"/>
+	<e:Label id="lab_hp" text="1000" x="501.5" y="623.67" stroke="2" strokeColor="0x0A98A8"/>
+	<e:Label id="lab_qizhi" text="1000" x="501.25" y="707.33" stroke="2" strokeColor="0x0A98A8"/>
+	<e:Label id="lab_baoji" text="1000" x="502.75" y="788" stroke="2" strokeColor="0x0A98A8"/>
+	<e:Image source="lvjiantou_png" x="352.5" y="513.5"/>
+	<e:Image source="lvjiantou_png" x="352.5" y="616.67"/>
+	<e:Image source="lvjiantou_png" x="352.5" y="701.33"/>
+	<e:Image source="lvjiantou_png" x="352.5" y="781"/>
+	<e:Image source="gongxishengji_png" y="326" scaleX="0.8" horizontalCenter="0.5"/>
+</e:Skin>

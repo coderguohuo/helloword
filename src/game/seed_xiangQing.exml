@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="seed_xiangQing" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="img_bg" source="seed_xiangqing_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="img_wu" source="kulian_png" y="884" horizontalCenter="0" visible="false"/>
+	<e:Label text="其他产出" y="822" fontFamily="SimHei" size="26" horizontalCenter="0" textColor="0x333333"/>
+	<e:Label text="收益" y="377.21" fontFamily="SimHei" size="30" textColor="0x333333" bold="true" horizontalCenter="0"/>
+	<e:Rect width="288" height="1" x="20.33" y="834.71" fillAlpha="0.4" fillColor="0xDCDCDC" anchorOffsetX="0"/>
+	<e:Rect width="289.5" height="1" x="440.33" y="834.71" fillAlpha="0.4" anchorOffsetX="0" fillColor="0xDCDCDC"/>
+	<e:Rect width="288" height="1" x="21.83" y="391.71" fillAlpha="0.4" fillColor="0xDCDCDC" anchorOffsetX="0"/>
+	<e:Rect width="289.5" height="1" x="441.83" y="391.71" fillAlpha="0.4" anchorOffsetX="0" fillColor="0xDCDCDC"/>
+	<e:Image id="img_close" source="close_png" x="624" y="176"/>
+	<e:Label id="lab_seedName" text="" x="313" y="222" stroke="3" strokeColor="0x3d95d8" fontFamily="Microsoft YaHei" size="60"/>
+    	<e:Group y="461" anchorOffsetY="0" width="500" x="125" height="320">
+		<e:Group id="group_hb" y="0" width="500" x="0" height="70">
+			<e:Label text="红包" x="65" y="22" fontFamily="SimHei" textColor="0x000000" size="26"/>
+			<e:Label text="(可提现 首次种植必产出)" x="250" y="45" fontFamily="SimHei" size="25" textColor="0x999999"/>
+			<e:Group x="250" y="2">
+				<e:Label id="lab_hongbao" text="¥ 0" x="0" y="0" fontFamily="SimHei" size="38" textColor="0xea1919" anchorOffsetX="0" bold="true"/>
+				<e:Label text="元" x="106.5" y="1" fontFamily="SimHei" size="26" textColor="0xEA1919" anchorOffsetX="0" bold="true"/>
+				<e:layout>
+					<e:HorizontalLayout verticalAlign="bottom" gap="8"/>
+				</e:layout>
+			</e:Group>
+			<e:Image source="hongbao2_png" y="0" x="145"/>
+		</e:Group>
+		<e:Group id="group_glod" y="78.40000000000003" width="500" x="0" height="70">
+			<e:Label text="(可购买种子,道具)" x="250" y="45" fontFamily="SimHei" size="25" textColor="0x999999"/>
+			<e:Label id="lab_gold" text="0" x="250" y="2" fontFamily="SimHei" textColor="0x000000" size="38" bold="true"/>
+			<e:Label text="金币" x="65" y="24" fontFamily="SimHei" textColor="0x000000" size="26"/>
+			<e:Image source="gold2_png" y="5.32" anchorOffsetX="0" anchorOffsetY="0" x="146.01" width="60" height="60"/>
+		</e:Group>
+		<e:Group id="group_nl" y="144.40000000000003" width="500" x="0" height="70">
+			<e:Label text="健康能量" x="11.33" y="26" fontFamily="SimHei" textColor="0x000000" size="26"/>
+			<e:Label text="(可加工物品)" x="250" y="45" fontFamily="SimHei" size="25" textColor="0x999999"/>
+			<e:Label id="lab_nengliang" text="0" x="250" y="2" fontFamily="SimHei" textColor="0x000000" size="38" bold="true"/>
+			<e:Image y="0" x="145" source="nengliang_png"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="50" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+
+    	<e:Scroller width="680" height="180" y="883" anchorOffsetX="0" horizontalCenter="0">
+		<e:Group id="group" width="560" height="180" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0">
+			<e:List id="list" anchorOffsetY="0" anchorOffsetX="0" y="0" x="0">
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="top" gap="10"/>
+				</e:layout>
+			</e:List>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<e:Group x="30" y="144" width="180" height="180">
+		<e:Image id="img" source="" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="img_suo" horizontalCenter="0" verticalCenter="-5" source="seed_suo_png" visible="false"/>
+		<e:Rect width="122" height="40" x="31" y="145" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xffffff" ellipseWidth="35"/>
+		<e:Label id="lab_pinzhi" text="" x="30.6" y="152" textColor="0x13ade5" size="26" anchorOffsetX="0" width="122.4" verticalAlign="middle" fontFamily="SimHei" textAlign="center"/>
+	</e:Group>
+	<e:Image id="img_jiesuo" source="btn_bg_png" y="1066" horizontalCenter="0"/>
+	<e:Group id="group_btn" x="244" y="1078" anchorOffsetX="0" width="264" anchorOffsetY="0" height="81" touchEnabled="false" touchChildren="false">
+		<e:Label id="lab_clock" text="合 成" x="66.5" y="0" textColor="0x935013" fontFamily="SimHei" size="26"/>
+		<e:Group x="0" y="26">
+			<e:Label text="购买" x="0" y="0" textColor="0x935013" fontFamily="SimHei" size="26"/>
+			<e:Image source="gold2_png" y="4" anchorOffsetX="0" anchorOffsetY="0" x="78" width="20" height="20"/>
+			<e:Label id="lab_needGold" text="1000" x="127" y="4" textColor="0x935013" fontFamily="SimHei" size="26"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="6"/>
+			</e:layout>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="8"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="img_hecheng" x="240.5" y="1073" source="btn_hecheng_png" visible="false"/>
+</e:Skin>

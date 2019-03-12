@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="beibao" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillColor="0xffffff"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="背 包" x="331" y="62.46" fontFamily="SimHei" size="35"/>
+	<e:Scroller width="750" height="1169.69" x="0" y="152" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group anchorOffsetX="0" width="236.36" anchorOffsetY="0" height="981.81">
+			<e:Label text="  我的兑换物品" x="53" y="88" textColor="0x23b9ef" fontFamily="SimHei"/>
+			<e:Group id="group_wupin" width="750" x="-7" y="129" anchorOffsetX="0" minHeight="360">
+				<e:List id="list_wupin" x="0" scaleX="1" scaleY="1">
+					<e:layout>
+						<e:TileLayout horizontalAlign="left" verticalAlign="top" requestedColumnCount="5" horizontalGap="0" verticalGap="0" orientation="rows"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+			<e:Rect width="750" height="25" x="192" y="440" fillColor="0xdcdcdc"/>
+			<e:Label text="  我的背包" x="63" y="154.33" textColor="0x23B9EF" fontFamily="SimHei"/>
+			<e:Group id="group_beibao" width="750" x="3" y="139" anchorOffsetX="0" minHeight="540">
+				<e:List id="list_beibao" x="0" scaleX="1" scaleY="1">
+					<e:layout>
+						<e:TileLayout requestedColumnCount="5" horizontalAlign="left" verticalAlign="top" horizontalGap="0" verticalGap="0" orientation="rows"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="15"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

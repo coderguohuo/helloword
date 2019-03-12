@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="guanjia_xiangqing" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_beibao_item_png" width="770" height="1350" horizontalCenter="0" verticalCenter="0"/>
+	<e:Rect width="20" height="20" x="40" y="1057.82" fillColor="0xEF8E40" ellipseWidth="20"/>
+	<e:Rect width="20" height="20" x="40" y="1115.88" fillColor="0xEF8E40" ellipseWidth="20"/>
+	<e:Rect width="20" height="20" x="40" y="1175.21" fillColor="0xEF8E40" ellipseWidth="20"/>
+	<e:Label text="管家每天可以工作一次,每次工作8个小时" x="88" y="1052.82" textColor="0xDD7B2C" fontFamily="SimHei"/>
+	<e:Label text="使用说明" x="61" y="981" textColor="0xDD7B2C" fontFamily="SimHei" size="36"/>
+	<e:Label text="管家一旦开始工作,无法暂停" x="88" y="1110.88" textColor="0xDD7B2C" fontFamily="SimHei"/>
+	<e:Label text="管家刷新时间为每天中午12点" x="88" y="1170.21" textColor="0xDD7B2C" fontFamily="SimHei"/>
+	<e:Rect width="670" height="700" y="169" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xcdf1ff" ellipseWidth="30" horizontalCenter="0"/>
+	<e:Image source="duihuakuang_png" x="277" y="245" scale9Grid="49,90,297,4" anchorOffsetY="0" height="355"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="管 家" y="62.46" fontFamily="SimHei" size="35" horizontalCenter="0"/>
+	<e:Image source="guanjia_png" x="78.16" y="267"/>
+	<e:Group y="913" width="700" x="36">
+		<e:Rect width="20" height="3" x="0" y="0" fillColor="0xdd7b2c"/>
+		<e:Rect width="20" height="3" x="10" y="10" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="20" y="20" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="30" y="30" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="40" y="40" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="50" y="50" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="60" y="60" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="70" y="70" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="80" y="80" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="90" y="90" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="100" y="100" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="110" y="110" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="120" y="120" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="130" y="130" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="140" y="140" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="150" y="150" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="160" y="160" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="170" y="170" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="180" y="180" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="190" y="190" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="200" y="200" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="210" y="210" fillColor="0xDD7B2C"/>
+		<e:Rect width="20" height="3" x="220" y="220" fillColor="0xDD7B2C"/>
+		<e:layout>
+			<e:HorizontalLayout gap="10"/>
+		</e:layout>
+	</e:Group>
+	<e:Label text="我可以帮您自动种收农作物(尽可以收取金币,装备,经验和宠物食品)" x="375" y="263" textColor="0xDD7B2C" fontFamily="SimHei" width="268" lineSpacing="8" size="28"/>
+	<e:Label text="1." x="344" y="263" textColor="0xDD7B2C" fontFamily="SimHei" lineSpacing="8" size="28"/>
+	<e:Label text="2." x="344" y="470" textColor="0xDD7B2C" fontFamily="SimHei" lineSpacing="8" size="28"/>
+	<e:Label text="我可以保护您的跟班和产出的物品防止被抢!" x="372" y="470" textColor="0xDD7B2C" fontFamily="SimHei" width="268" lineSpacing="8" size="28"/>
+	<e:Image id="img_guyong" source="btn_guyong_png" y="713" horizontalCenter="0"/>
+	<e:Group y="799" horizontalCenter="0">
+		<e:Label text="花费" x="0" y="0" textColor="0x333333" fontFamily="SimHei" size="26"/>
+		<e:Image source="zuanshi_png" x="72" y="0"/>
+		<e:Label id="lab_price" text="1" x="127" y="5" fontFamily="SimHei" textColor="0xff1414" size="26"/>
+		<e:Label text="颗" x="137" y="15" fontFamily="SimHei" textColor="0xFF1414" size="26"/>
+		<e:layout>
+			<e:HorizontalLayout gap="8" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

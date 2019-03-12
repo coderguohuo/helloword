@@ -1,0 +1,68 @@
+{
+	"1":{
+		"id": 1,
+		"type": 1,
+		"name": "分享领豆",
+		"icon": "icon_pindou_nor_png",
+		"dayTimes": 1,
+		"getPinDouNum": 10,
+		"des": "每天1次",
+		"btnName": "去完成",
+		"url": ""
+	},
+	"2":{
+		"id": 2,
+		"type": 2,
+		"name": "浏览商品1分钟",
+		"icon": "icon_look_nor_png",
+		"dayTimes": 3,
+		"getPinDouNum": 15,
+		"des": "每天3次",
+		"btnName": "去浏览",
+		"url": ""
+	},
+	"3":{
+		"id": 3,
+		"type": 3,
+		"name": "邀请好友玩农场",
+		"icon": "icon_invite_nor_png",
+		"dayTimes": 1,
+		"getPinDouNum": 10,
+		"des": "每天1次",
+		"btnName": "去完成",
+		"url": ""
+	},
+	"4":{
+		"id": 4,
+		"type": 4,
+		"name": "指定页面购买商品",
+		"icon": "icon_product_nor_png",
+		"dayTimes": 0,
+		"getPinDouNum": 10,
+		"des": "次数不限",
+		"btnName": "去购买",
+		"url": ""
+	},
+	"5":{
+		"id": 5,
+		"type": 5,
+		"name": "邀请好友来种树",
+		"icon": "icon_three_nor_png",
+		"dayTimes": 0,
+		"getPinDouNum": 10,
+		"des": "次数不限",
+		"btnName": "去种树",
+		"url": ""
+	},
+	"6":{
+		"id": 6,
+		"type": 6,
+		"name": "邀请好友成为一星批发商",
+		"icon": "icon_pindou_nor_png",
+		"dayTimes": 0,
+		"getPinDouNum": 10,
+		"des": "次数不限",
+		"btnName": "去完成",
+		"url": ""
+	}
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="buy_quan" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillAlpha="0.4"/>
+	<e:Image source="hy_bg_png" horizontalCenter="0" scale9Grid="77,140,464,105" anchorOffsetY="0" height="600" verticalCenter="0"/>
+	<e:Label id="lab_title" text="请输入购买数量" y="398" fontFamily="SimHei" textColor="0xb97628" size="36" bold="true" horizontalCenter="0"/>
+	<e:Label id="lab_note" text="" y="796" fontFamily="SimHei" textColor="0xB97628" size="24" horizontalCenter="0"/>
+	<e:Label id="lab_note0" text="幸运券" y="592" fontFamily="SimHei" textColor="0xB97628" size="24" horizontalCenter="0.5"/>
+	<e:Image id="img_close" source="hy_guanbi_png" x="617" y="386"/>
+	<e:Image id="img_yes" y="865" horizontalCenter="0" source="btn_buy_png"/>
+	<e:Rect width="260" height="80" y="705" anchorOffsetX="0" anchorOffsetY="0" ellipseWidth="30" alpha="0.8" fillColor="0xe8bb9b" strokeColor="0xdd955f" strokeWeight="2" horizontalCenter="0"/>
+	<e:Image id="img_add" source="add_png" x="430" y="715"/>
+	<e:Image id="img_sub" source="sub_png" x="260" y="715"/>
+	<e:Image source="zhaohuanquan_png" y="483" horizontalCenter="0"/>
+	<e:EditableText id="ed_num" width="104.8" height="57.47" text="1" x="323" y="717.2" anchorOffsetY="0" verticalAlign="middle" textAlign="center" anchorOffsetX="0" textColor="0xaa4e14" fontFamily="SimHei"/>
+</e:Skin>

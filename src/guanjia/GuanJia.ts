@@ -1,0 +1,4 @@
+class GuanJia {
+	public constructor() {
+	}
+}

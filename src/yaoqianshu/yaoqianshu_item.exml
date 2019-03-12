@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="yaoqianshu_item" width="520" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" ellipseWidth="30" fillColor="0xffffff"/>
+	<e:Image id="img_icon" source="icon1_png" x="19" width="40" height="40" verticalCenter="0"/>
+	<e:Label id="lab_name" text="Label" x="71" textColor="0xe76565" size="22" fontFamily="SimHei" verticalCenter="0"/>
+	<e:Label id="lab_hb" text="0.01元" x="405.3" textColor="0xE76565" size="22" fontFamily="SimHei" verticalCenter="0"/>
+	<e:Label text="偷走您红包" x="230.35" size="22" textColor="0xb97628" fontFamily="SimHei" verticalCenter="0"/>
+	<e:Image source="hongbao2_png" x="369.75" width="26" height="35" verticalCenter="0.5"/>
+</e:Skin>

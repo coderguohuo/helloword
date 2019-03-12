@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="fenxiang_tidu" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jianbian_png" left="0" right="0" top="0" bottom="0"/>
+	<e:Image source="bg_beibao_png" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Label text="邀请土地解锁规则" y="62.46" fontFamily="SimHei" size="30" horizontalCenter="0"/>
+	<e:Label id="lab_title" text="邀请更多好友  解锁专属土地" y="215.49" fontFamily="SimHei" size="35" textColor="0x000000" horizontalCenter="0.5"/>
+	<e:Label id="lab_note" text="解锁专属越多, 红包专属翻倍" y="636.56" fontFamily="SimHei" size="35" textColor="0x000000" horizontalCenter="0"/>
+	<e:Label text="解锁条件" y="848.56" fontFamily="SimHei" size="28" textColor="0x000000" horizontalCenter="0"/>
+	<e:Label text="分享你的二维码到微信群或者朋友圈" y="910.56" fontFamily="SimHei" size="28" textColor="0x000000" horizontalCenter="0"/>
+	<e:Label id="lab_num" text="10" y="977.23" fontFamily="SimHei" size="28" textColor="0xdd7375" anchorOffsetX="0" width="33.2" x="261.4" textAlign="center"/>
+	<e:Label text="位好友扫码加入我们" y="977.23" fontFamily="SimHei" size="28" textColor="0x000000" x="296"/>
+	<e:Label text="邀请" y="977.23" fontFamily="SimHei" size="28" textColor="0x000000" x="201.65"/>
+	<e:Image id="img" source="fengxiang_img_png" y="305.48" horizontalCenter="0"/>
+	<e:Label text="当前进度 " y="742.62" fontFamily="SimHei" size="35" textColor="0xDD7375" horizontalCenter="-79"/>
+	<e:Label id="lab_jindu" text="0/10" y="742.62" fontFamily="SimHei" size="35" textColor="0xDD7375" horizontalCenter="59"/>
+	<e:Image id="img_fenxiang" source="btn_fenxiang_png" x="245.5" y="1116.34"/>
+	<e:Rect width="250" height="1" x="55" y="862"/>
+	<e:Rect width="250" height="1" x="448" y="862"/>
+</e:Skin>

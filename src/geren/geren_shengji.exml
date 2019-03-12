@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="geren_shengji" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_shengji_jpg" x="0" y="0"/>
+	<e:Label id="lab_close" text="&lt;" x="38" y="53.96" size="40" scaleX="1" anchorOffsetX="0" width="50" textAlign="center" fontFamily="SimHei" bold="true" scaleY="1.3"/>
+	<e:Image source="icon1_png" y="148" width="121" height="121" horizontalCenter="0"/>
+	<e:Image id="img_icon" source="bg_icon_png" y="148" width="121" height="121" horizontalCenter="0"/>
+	<e:Label id="lab_name" text="Label" y="291" fontFamily="SimHei" horizontalCenter="0"/>
+	<e:Rect width="420" height="40" x="194" y="380.5" ellipseWidth="35" fillColor="0x254f8c"/>
+	<e:Rect id="rec_jingyan" width="420" height="40" x="194" y="380.5" ellipseWidth="35" fillColor="0xffe663"/>
+	<e:Image source="bg_geren_lv_png" x="131" y="358"/>
+	<e:Label id="lab_jingyan" text="100/100" x="210.5" y="387" strokeColor="0x1e8a22" stroke="2" size="26" anchorOffsetX="0" width="401" textAlign="center" fontFamily="Tahoma"/>
+	<e:Label text="LV" x="161.5" y="378" size="20"/>
+	<e:Label id="lab_lv" text="1" x="148.5" y="400" size="20" anchorOffsetX="0" width="49.5" textAlign="center" fontFamily="MingLiU"/>
+	<e:Label text="生命值" x="371" y="542" size="26" fontFamily="SimHei"/>
+	<e:Label id="lab_shengming" text="" x="371" y="591" size="26" fontFamily="SimHei"/>
+	<e:Label text="气质" x="371" y="682" size="26" fontFamily="SimHei"/>
+	<e:Label id="lab_qizhi" text="" x="371" y="731" size="26" fontFamily="SimHei"/>
+	<e:Label text="暴击率" x="371" y="822" size="26" fontFamily="SimHei"/>
+	<e:Label id="lab_baoji" text="" x="371" y="871" size="26" fontFamily="SimHei"/>
+	<e:Group y="1195" horizontalCenter="0">
+		<e:Label text="花费" x="0" y="10" size="22" fontFamily="SimHei"/>
+		<e:Image source="gold2_png" x="52" y="0" width="20" height="20"/>
+		<e:Label id="lab_gold" text="10" x="92" y="10" size="22" fontFamily="SimHei"/>
+		<e:layout>
+			<e:HorizontalLayout gap="8"/>
+		</e:layout>
+	</e:Group>
+	<e:Image source="ico_baoji_png" x="255" y="823"/>
+	<e:Image source="ico_qizhi_png" x="255" y="683"/>
+	<e:Image source="ico_shengming_png" x="255" y="543"/>
+	<e:Image id="img_shengji" source="btn_shengji_png" y="1107" horizontalCenter="0" width="200" height="65"/>
+</e:Skin>

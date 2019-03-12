@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="qianggenban" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1334" x="0" y="0" fillAlpha="0.4"/>
+	<e:Image source="hy_bg_png" y="371" horizontalCenter="0"/>
+	<e:Label id="lab_title" text="他的主人" y="398" fontFamily="SimHei" textColor="0xb97628" size="36" bold="true" horizontalCenter="0"/>
+	<e:Label text="需要打败他的主人,才能抢走他" y="621" fontFamily="SimHei" textColor="0xB97628" size="24" horizontalCenter="0"/>
+	<e:Label id="lab_name" text="你抢到了" y="568" fontFamily="SimHei" size="24" x="327.5" textColor="0xe76565"/>
+	<e:Image id="img_close" source="hy_guanbi_png" x="617" y="386"/>
+	<e:Image id="img_icon" width="60" height="60" y="489" horizontalCenter="0" source="icon1_png"/>
+	<e:Image id="img_yes" y="686" horizontalCenter="0" source="genban_qiangta_png"/>
+</e:Skin>

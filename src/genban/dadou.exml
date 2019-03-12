@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="dadou" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="tw"/>
+	</w:Declarations>
+	<e:Image source="dadou_beijing_jpg" x="0" y="0"/>
+	<e:Image y="28" source="dadou_title_png" horizontalCenter="0"/>
+	<e:Rect id="rec0" width="20" height="20" x="18" y="723" visible="false"/>
+	<e:Rect id="rec1" width="20" height="20" x="730" y="723" visible="false"/>
+	<e:Label id="lab_shanghai" text="Label" x="130" y="618" textColor="0xe81414" stroke="2" strokeColor="0xe8e8e8" alpha="0"/>
+	<e:Image id="img_iconme" source="icon1_png" x="20" y="152" width="85" height="85"/>
+	<e:Image id="img_iconother" source="icon1_png" x="645.14" y="152" width="85" height="85"/>
+	<e:Rect width="200" height="30" x="115" y="203" ellipseWidth="20" fillAlpha="0.3"/>
+	<e:Rect id="rec_me" width="200" height="30" x="115" y="203" ellipseWidth="20" fillColor="0xe34a5f" anchorOffsetX="0"/>
+	<e:Rect width="200" height="30" x="634.14" y="203" ellipseWidth="20" fillAlpha="0.3" scaleX="-1"/>
+	<e:Rect id="rec_other" width="200" height="30" x="634.14" y="203" ellipseWidth="20" fillColor="0xE34A5F" anchorOffsetX="0" scaleX="-1"/>
+	<e:Label id="lab_nameme" text="Label" x="121" y="167" textColor="0x000000" size="26" fontFamily="SimHei"/>
+	<e:Label id="lab_hpme" text="1/1" x="115.13" y="206.8" size="22" fontFamily="SimHei" anchorOffsetX="0" width="200.2" textColor="0xffffff" stroke="1" textAlign="center"/>
+	<e:Label id="lab_hpother" text="Label" x="434.14" y="206.8" size="22" fontFamily="SimHei" anchorOffsetX="0" width="200" textColor="0xFFFFFF" stroke="1" textAlign="center"/>
+	<e:Label id="lab_nameother" text="Label" x="443.44" y="167" textColor="0x000000" size="26" fontFamily="SimHei" anchorOffsetX="0" width="185.5" textAlign="right"/>
+	<e:Label id="lab_num" text="1" y="171.4" size="45" horizontalCenter="0" fontFamily="SimHei"/>
+	<e:Image id="img_jump" source="btn_dadou_tiaoguo_png" x="210.5" y="1207.18"/>
+</e:Skin>

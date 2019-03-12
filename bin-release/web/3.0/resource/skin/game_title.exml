@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="game_title" width="750" height="1334" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="bg_title_png" x="0" y="0"/>
+	<e:Image id="img_icon" width="79.5" height="77.5" x="14" y="69" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image id="img_beibao" source="main_beibao_png" x="592" y="78"/>
+	<e:Rect width="200" height="30" x="25" y="17" fillColor="0x3D5D67" ellipseWidth="30"/>
+	<e:Rect width="200" height="30" x="275" y="17" fillColor="0x3D5D67" ellipseWidth="30"/>
+	<e:Rect width="200" height="30" x="511" y="17" fillColor="0x3D5D67" ellipseWidth="30"/>
+	<e:Image id="top_zuanshi" source="zuanshi_png" x="18" y="14"/>
+	<e:Image id="img_addZuanShi" source="jiahao_png" x="193.5" y="14.5"/>
+	<e:Image id="img_addGold" source="jiahao_png" x="443.9" y="14.3"/>
+	<e:Image id="top_hongbao" source="hongbao_png" x="504.7" y="13.2"/>
+	<e:Image id="img_tixian" source="tixian_png" x="668.67" y="16.1"/>
+	<e:Image id="img_paihang" source="main_paihangbang_png" x="671" y="78"/>
+	<e:Label id="lab_beibao" text="背包" x="590" y="123.6" fontFamily="SimHei" size="22"/>
+	<e:Label text="排行榜" x="658" y="123.6" fontFamily="SimHei" size="22"/>
+	<e:Label id="lab_zuanshi" text="0" x="53" y="19" size="26" anchorOffsetX="0" width="143.5" textAlign="center"/>
+	<e:Label text="经验" x="115" y="112" size="16" anchorOffsetX="0" textAlign="center" fontFamily="SimHei"/>
+	<e:Label text="体力" x="115" y="134" size="16" anchorOffsetX="0" textAlign="center" fontFamily="SimHei"/>
+	<e:Label id="lab_gold" text="0" x="303.25" y="19" size="26" anchorOffsetX="0" width="143.5" textAlign="center"/>
+	<e:Label id="lab_nengLiang" text="0" x="325.03" y="118.5" size="26" anchorOffsetX="0" width="128.5" textAlign="center"/>
+	<e:Label id="lab_hongbao" text="0" x="556.2" y="20.75" size="23" anchorOffsetX="0" width="84.75" textAlign="center"/>
+	<e:Label text="¥" x="539.2" y="20.1" size="26" anchorOffsetX="0" textAlign="center"/>
+	<e:Label text="元" x="640.39" y="19" size="26" anchorOffsetX="0" textAlign="center" fontFamily="SimHei"/>
+	<e:Image id="top_gold" source="gold2_png" x="273" y="16.25" width="32" height="32"/>
+	<e:Image source="bg_icon_png" x="11" y="65"/>
+	<e:Image id="img_lv" source="chenghao1_png" x="115" y="66"/>
+	<e:Rect width="90" height="8" x="151" y="116" fillColor="0x265864" ellipseWidth="8"/>
+	<e:Rect width="90" height="8" x="151" y="138" fillColor="0x265864" ellipseWidth="8"/>
+	<e:Rect id="rec_jingyan" width="10" height="9" x="151" y="115.5" ellipseWidth="8" fillColor="0xFFE663"/>
+	<e:Rect id="rec_tili" width="90" height="9" x="151" y="137.5" ellipseWidth="8" fillColor="0x00DB08" anchorOffsetX="0"/>
+	<e:Image source="bg_lv_png" x="76" y="122"/>
+	<e:Label id="lab_lv" text="1" x="78.8" y="129.8" size="20" anchorOffsetX="0" width="28.6" textAlign="center"/>
+	<e:Image source="mian_jkjh_png" x="289" y="73"/>
+	<e:Image id="top_nengliang" source="nengliang_png" x="299.29" y="114.8" width="22" height="30"/>
+	<e:Rect width="750" height="1334" x="0" y="0" fillAlpha="0"/>
+</e:Skin>
