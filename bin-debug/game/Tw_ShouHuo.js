@@ -146,16 +146,16 @@ var Tw_ShouHuo = (function (_super) {
         var game = Director.getInstance().gameLayer.getChildByName("game");
         var context = this;
         //删除可收获集合里的索引
+        context.Close();
+        var index = game.canShouHUoSeed.indexOf(context.tudidata);
+        console.log(index);
+        if (index != -1) {
+            game.canShouHUoSeed.splice(index, 1);
+        }
+        context.img.visible = false;
+        game.ShouHUo(context.data.land_code, context.data, context.type);
         FachUtils.Get("/plant/harvest/" + this.data.land_id, function (res) {
             if (res.status) {
-                var index = game.canShouHUoSeed.indexOf(context.tudidata);
-                console.log(index);
-                if (index != -1) {
-                    game.canShouHUoSeed.splice(index, 1);
-                }
-                context.img.visible = false;
-                game.ShouHUo(context.data.land_code, res.resource.harvest, context.type);
-                context.Close();
             }
             else {
                 PopoP.getTips(res.message);
@@ -167,17 +167,17 @@ var Tw_ShouHuo = (function (_super) {
         var game = Director.getInstance().gameLayer.getChildByName("game");
         var context = this;
         //删除可收获集合里的索引
+        context.img.visible = false;
+        context.Close();
+        var index = game.canShouHUoAnimal.indexOf(context.tudidata);
+        console.log(index);
+        if (index != -1) {
+            game.canShouHUoAnimal.splice(index, 1);
+            console.log(game.canShouHUoAnimal);
+        }
+        game.ShouHUo(context.data.land_code, context.data, context.type);
         FachUtils.Get("/animal/harvest/" + this.data.land_id, function (res) {
             if (res.status) {
-                var index = game.canShouHUoAnimal.indexOf(context.tudidata);
-                console.log(index);
-                if (index != -1) {
-                    game.canShouHUoAnimal.splice(index, 1);
-                    console.log(game.canShouHUoAnimal);
-                }
-                context.img.visible = false;
-                game.ShouHUo(context.data.land_code, res.resource.harvest, context.type);
-                context.Close();
             }
             else {
                 PopoP.getTips(res.message);

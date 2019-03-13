@@ -106,8 +106,13 @@ class SelectSeed_Item extends eui.ItemRenderer {
 			willBean = game.TuDiBeans[curSelectedLand - 1];
 		}
 
+		let self = this;
 		if(willBean){
 			this.updateLandToGrow(seedData, willBean, 200);
+			self.rec_up.touchEnabled = false;
+			egret.setTimeout(function(){
+				self.rec_up.touchEnabled = true;
+			}, self, 100);
 			FachUtils.Post("/plant/" + curSelectedLand, {id: seedData._id}, function(res){
 				if(res.status){
 					game.tudi_selected_pond = 0;

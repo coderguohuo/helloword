@@ -57,6 +57,69 @@ var SelectAnimal_Item = (function (_super) {
             this.img.filters = null;
         }
     };
+    SelectAnimal_Item.prototype.updateLandToGrow = function (seedData, tuDiBean, delay) {
+        if (delay === void 0) { delay = 0; }
+        var needTime = seedData.growTime * 1000;
+        var curTime = new Date().getTime() - Director.getInstance().ShiJianCha;
+        var curData = tuDiBean.data;
+        curData.status = 2; // 生长中 
+        curData.plantTime = curTime + delay;
+        curData.harvestTime = curData.plantTime + needTime;
+        curData.animationId = seedData.animationId;
+        tuDiBean.init();
+        var game = Director.getInstance().gameLayer.getChildByName("game");
+        game.updateMoney({ type: "gold", addNum: -seedData.plantPrice });
+    };
+    // 点击动物判断是否可以饲养 不经后端直接反馈玩家
+    SelectAnimal_Item.prototype.findEmptyLandAndPlant = function (seedData) {
+        var game = Director.getInstance().gameLayer.getChildByName("game");
+        var curSelectedLand = game.animal_selected_pond;
+        var willBean = null;
+        var needGold = seedData.plantPrice;
+        var curGold = game.getGold();
+        if (curGold < needGold) {
+            PopoP.getTips("金币不足哦");
+            return;
+        }
+        if (curSelectedLand > 0) {
+            var bean = game.animalBeans[curSelectedLand - 1];
+            if (bean.data.status != 1) {
+                curSelectedLand = 0;
+            }
+        }
+        if (curSelectedLand == 0) {
+            for (var i = 0; i < game.animalBeans.length; ++i) {
+                var bean = game.animalBeans[i];
+                var data = bean.data;
+                if (data.status == 1) {
+                    willBean = bean;
+                    break;
+                }
+            }
+        }
+        else {
+            willBean = game.animalBeans[curSelectedLand - 1];
+        }
+        if (willBean) {
+            this.updateLandToGrow(seedData, willBean, 200);
+            FachUtils.Post("/animal/" + curSelectedLand, { id: seedData._id }, function (res) {
+                if (res.status) {
+                    game.animal_selected_pond = 0;
+                }
+                else if (res.status == 1081) {
+                    Director.getInstance().pushScene(new Animal_XiangQing(seedData, 2));
+                    PopoP.getTips(res.message);
+                }
+                else {
+                    PopoP.getTips(res.message);
+                }
+            }, function (res) { }, false);
+        }
+        else {
+            Director.getInstance().pushScene(new Animal_XiangQing(seedData, 2));
+            PopoP.getTips("无闲置空间了哦");
+        }
+    };
     SelectAnimal_Item.prototype.Touch = function (e) {
         e.stopPropagation();
         var game = Director.getInstance().gameLayer.getChildByName("game");
@@ -70,22 +133,24 @@ var SelectAnimal_Item = (function (_super) {
             //game.remoSelectSeed();
             return;
         }
-        FachUtils.Post("/animal/" + game.animal_selected_pond, data, function (res) {
-            if (res.status) {
-                game.animal_selected_pond = 0;
-                //	game.remoSelectSeed();
-                Director.getInstance().getUser(true);
-            }
-            else if (res.statusCode == 1081) {
-                // 无闲置土地 ,弹出种子收益详情
-                Director.getInstance().pushScene(new Animal_XiangQing(context.data, 2));
-                PopoP.getTips(res.message);
-            }
-            else {
-                PopoP.getTips(res.message);
-            }
-        }, function (res) {
-        });
+        var self = this;
+        var curAnimalData = self.data;
+        self.findEmptyLandAndPlant(curAnimalData);
+        // FachUtils.Post("/animal/" + game.animal_selected_pond, data, function (res) {
+        // 	if (res.status) {
+        // 		game.animal_selected_pond = 0;
+        // 		//	game.remoSelectSeed();
+        // 		Director.getInstance().getUser(true);
+        // 	} else if (res.statusCode == 1081) {
+        // 		// 无闲置土地 ,弹出种子收益详情
+        // 		Director.getInstance().pushScene(new Animal_XiangQing(context.data, 2));
+        // 			PopoP.getTips(res.message);
+        // 	//	game.remoSelectSeed();
+        // 	} else {
+        // 		PopoP.getTips(res.message);
+        // 	}
+        // }, function (res) {
+        // });
     };
     return SelectAnimal_Item;
 }(eui.ItemRenderer));

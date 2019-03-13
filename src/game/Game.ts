@@ -144,7 +144,7 @@ class Game extends eui.Component {
 	public TuDiBeans: TuDiBean[] = [];
 
 	private animaltudis: eui.Image[] = [];
-	private animalBeans: AnimalBean[] = [];
+	public animalBeans: AnimalBean[] = [];
 	private initView() {
 		for (var i = 0; i < 12; i++) {
 			let imgTudi = <eui.Image>this["tudi" + (i+1)];
@@ -942,8 +942,8 @@ class Game extends eui.Component {
 				break;
 		}
 
-		var timer = new egret.Timer(100, 6);
-		timer.addEventListener(egret.TimerEvent.TIMER, this.JingHuaFly.bind(this, img, data), this);
+		var timer = new egret.Timer(100, 3);
+		timer.addEventListener(egret.TimerEvent.TIMER, this.JingHuaFly.bind(this, img, data, pond, type), this);
 		timer.start();
 
 		if (data.hb != 0) {
@@ -952,7 +952,7 @@ class Game extends eui.Component {
 
 	}
 
-	public yiJianShouHUo(canShouHUoSeed, type) {
+	public yiJianShouHUo(canShouHUoSeed, type, harvestData) {
 
 		this.touchEnabled = false;
 		this.scroll.scrollPolicyH = "off";
@@ -975,14 +975,16 @@ class Game extends eui.Component {
 			goldImg3.width = 60;
 			goldImg3.height = 65;
 
-			this.YiJianFly(goldImg, this.top_nengliang);
-			this.YiJianFly(goldImg2, this.top_gold);
-			this.YiJianFly(goldImg3, this.top_hongbao, true);
+			this.YiJianFly(goldImg, this.top_nengliang, false, pond, null, type);
+			this.YiJianFly(goldImg2, this.top_gold, false, pond, null, type);
+			
+			// i = 0 是计算收获
+			this.YiJianFly(goldImg3, this.top_hongbao, i == 0, pond, harvestData, type);
 		}
 
 	}
 
-	private JingHuaFly(tuDiimg: eui.Image, data, event: egret.TimerEvent) {
+	private JingHuaFly(tuDiimg: eui.Image, data, index, type, event: egret.TimerEvent) {
 
 		var context = this;
 		var sum = event.currentTarget.repeatCount;
@@ -991,8 +993,6 @@ class Game extends eui.Component {
 		if (currentCount <= 3) {
 			this.GoldFly(tuDiimg, data, currentCount);
 		}
-
-
 
 		var goldImg: egret.Bitmap = this.createBitmap("nengliang_png", this.top_nengliang, tuDiimg);
 		goldImg.width = 60;
@@ -1003,12 +1003,14 @@ class Game extends eui.Component {
 				this.removeChild(goldImg);//清空金币
 				goldImg = null;
 			}
-
+			if (sum == currentCount) {
+				context.updateMoneyByHarvestData(data);
+			}
 		};
 
 
 		var onComplete1: Function = function () {
-			this.lab_nengLiang.text = DataUtils.floot(Number(this.lab_nengLiang.text) + data.plt_sessence / sum) + "";
+			this.lab_nengLiang.text = Math.floor(Number(this.lab_nengLiang.text) + data.plt_sessence / sum) + "";
 
 			egret.Tween.get(this.top_nengliang).to({
 				scaleX: 1.1,
@@ -1022,14 +1024,16 @@ class Game extends eui.Component {
 			if (sum == currentCount) {
 				this.scroll.scrollPolicyH = "on";
 				this.scroll.scrollPolicyV = "on";
-				Director.getInstance().getUser(true);
+				// Director.getInstance().getUser(true);
 
 				//手动设置状态 单个更新
 				// context.TuDiBeans[pond].data.status = 1;
 				// context.TuDiBeans[pond].setDate(context.TuDiBeans[pond].data);
+
 			}
 
 		};
+		context.clearPlantRoAnimalAni(index, type, 200);
 
 
 		var goldX = this.top_nengliang.x + this.top_nengliang.width / 2;
@@ -1039,15 +1043,36 @@ class Game extends eui.Component {
 		egret.Tween.get(goldImg).to({ x: goldX, y: goldY, alpha: 1 }, 800, egret.Ease.sineOut).call(onComplete1, this);
 	}
 
+	public clearPlantRoAnimalAni(index, type?, delay?){
+		let bean = null;
+		if(type == 1){
+			bean = this.TuDiBeans[index];
+		}else{
+			bean = this.animalBeans[index];
+		}
+
+		egret.setTimeout(function(){
+			bean.data.status = 1;
+			bean.init();
+		}, this, delay || 0);
+	}
+	public updateMoneyByHarvestData(harvestData){
+		let arr = [
+			{type: "gold", addNum: harvestData.gold},
+			{type: "nengliang", addNum: harvestData.plt_sessence},
+			{type: "hongbao", addNum: harvestData.hb}
+		]
+		this.updateMoney(arr);
+	}
 
 
-	private YiJianFly(goldImg, title, getuser?) {
+	private YiJianFly(goldImg, title, getuser?, index?, harvestData?, type?) {
+		let self = this;
 		var onComplete2: Function = function () {
 			if (goldImg.parent != null) {
 				goldImg.parent.removeChild(goldImg);//清空金币
 				goldImg = null;
 			}
-
 		};
 		var onComplete1: Function = function () {
 			egret.Tween.get(title).to({
@@ -1061,14 +1086,18 @@ class Game extends eui.Component {
 				this.scroll.scrollPolicyH = "on";
 				this.scroll.scrollPolicyV = "on";
 				this.canShouHUoSeed = [];
-				Director.getInstance().getUser(true);
+				// Director.getInstance().getUser(true);
+
+				self.updateMoneyByHarvestData(harvestData);
 			}
+
 
 			egret.Tween.get(goldImg).to({ alpha: 0 }, 200).call(onComplete2, this);//隐藏金币
 		};
 		var goldX = title.x + title.width / 2;
 		var goldY = title.y + title.height / 2;
 		egret.Tween.get(goldImg).to({ x: goldX, y: goldY, alpha: 1 }, 800, egret.Ease.sineOut).call(onComplete1, this);
+		self.clearPlantRoAnimalAni(index, type, 200);
 	}
 
 	private createBitmap(str, titleImg, tudiImg) {
@@ -1099,7 +1128,7 @@ class Game extends eui.Component {
 			}
 		};
 		var onComplete1: Function = function () {
-			this.lab_gold.text = DataUtils.floot(Number(this.lab_gold.text) + data.gold / 3) + "";
+			this.lab_gold.text = Math.floor(Number(this.lab_gold.text) + data.gold / 3) + "";
 
 			egret.Tween.get(this.top_gold).to({
 				scaleX: 1.1,
@@ -1342,12 +1371,29 @@ class Game extends eui.Component {
 /////////////////////////////////////////NEW ADD///////////////////////
 
 	// 更新货币
-	updateMoney(data){
-		let user = JSON.parse(egret.localStorage.getItem("user"));
-		if(data.type = "gold"){
-			user.gold += data.addNum;
-			this.lab_gold.text = DataUtils.floot(user.gold);
+	updateMoney(obj){
+		let datas = [];
+		if(obj instanceof Array){
+			datas = obj;
+		}else{
+			datas.push(obj);
 		}
+
+		let user = JSON.parse(egret.localStorage.getItem("user"));
+		for(let i = 0; i < datas.length; ++i){
+			let data = datas[i];
+			if(data.type == "gold"){
+				user.gold += data.addNum;
+				this.lab_gold.text = DataUtils.floot(user.gold);
+			}else if(data.type == "nengliang"){
+				user.plt_sessence += data.addNum;
+				this.lab_nengLiang.text = DataUtils.floot(user.plt_sessence);
+			}else if(data.type == "hongbao"){
+				user.hb += data.addNum;
+				this.lab_hongbao.text = DataUtils.floot(user.hb);
+			}
+		}
+
 		egret.localStorage.setItem("user", JSON.stringify(user));
 	}
 

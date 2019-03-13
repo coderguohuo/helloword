@@ -123,7 +123,7 @@ class TuDiBean extends eui.Component {
 
 
 	private harvestDate;//预览收益
-	private init() {
+	public init() {
 
 		this.harvestDate = null;
 

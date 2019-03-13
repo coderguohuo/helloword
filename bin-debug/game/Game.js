@@ -685,14 +685,14 @@ var Game = (function (_super) {
                 img = this.animaltudis[pond];
                 break;
         }
-        var timer = new egret.Timer(100, 6);
-        timer.addEventListener(egret.TimerEvent.TIMER, this.JingHuaFly.bind(this, img, data), this);
+        var timer = new egret.Timer(100, 3);
+        timer.addEventListener(egret.TimerEvent.TIMER, this.JingHuaFly.bind(this, img, data, pond, type), this);
         timer.start();
         if (data.hb != 0) {
             this.HongBaoFly(img, data);
         }
     };
-    Game.prototype.yiJianShouHUo = function (canShouHUoSeed, type) {
+    Game.prototype.yiJianShouHUo = function (canShouHUoSeed, type, harvestData) {
         this.touchEnabled = false;
         this.scroll.scrollPolicyH = "off";
         this.scroll.scrollPolicyV = "off";
@@ -712,12 +712,13 @@ var Game = (function (_super) {
             var goldImg3 = this.createBitmap("hongbao2_png", this.top_hongbao, img);
             goldImg3.width = 60;
             goldImg3.height = 65;
-            this.YiJianFly(goldImg, this.top_nengliang);
-            this.YiJianFly(goldImg2, this.top_gold);
-            this.YiJianFly(goldImg3, this.top_hongbao, true);
+            this.YiJianFly(goldImg, this.top_nengliang, false, pond, null, type);
+            this.YiJianFly(goldImg2, this.top_gold, false, pond, null, type);
+            // i = 0 是计算收获
+            this.YiJianFly(goldImg3, this.top_hongbao, i == 0, pond, harvestData, type);
         }
     };
-    Game.prototype.JingHuaFly = function (tuDiimg, data, event) {
+    Game.prototype.JingHuaFly = function (tuDiimg, data, index, type, event) {
         var context = this;
         var sum = event.currentTarget.repeatCount;
         var currentCount = event.currentTarget.currentCount;
@@ -732,9 +733,12 @@ var Game = (function (_super) {
                 this.removeChild(goldImg); //清空金币
                 goldImg = null;
             }
+            if (sum == currentCount) {
+                context.updateMoneyByHarvestData(data);
+            }
         };
         var onComplete1 = function () {
-            this.lab_nengLiang.text = DataUtils.floot(Number(this.lab_nengLiang.text) + data.plt_sessence / sum) + "";
+            this.lab_nengLiang.text = Math.floor(Number(this.lab_nengLiang.text) + data.plt_sessence / sum) + "";
             egret.Tween.get(this.top_nengliang).to({
                 scaleX: 1.1,
                 scaleY: 1.1
@@ -746,15 +750,37 @@ var Game = (function (_super) {
             if (sum == currentCount) {
                 this.scroll.scrollPolicyH = "on";
                 this.scroll.scrollPolicyV = "on";
-                Director.getInstance().getUser(true);
             }
         };
+        context.clearPlantRoAnimalAni(index, type, 200);
         var goldX = this.top_nengliang.x + this.top_nengliang.width / 2;
         var goldY = this.top_nengliang.y + this.top_nengliang.height / 2;
         SoundsMgr.removeCell(currentCount);
         egret.Tween.get(goldImg).to({ x: goldX, y: goldY, alpha: 1 }, 800, egret.Ease.sineOut).call(onComplete1, this);
     };
-    Game.prototype.YiJianFly = function (goldImg, title, getuser) {
+    Game.prototype.clearPlantRoAnimalAni = function (index, type, delay) {
+        var bean = null;
+        if (type == 1) {
+            bean = this.TuDiBeans[index];
+        }
+        else {
+            bean = this.animalBeans[index];
+        }
+        egret.setTimeout(function () {
+            bean.data.status = 1;
+            bean.init();
+        }, this, delay || 0);
+    };
+    Game.prototype.updateMoneyByHarvestData = function (harvestData) {
+        var arr = [
+            { type: "gold", addNum: harvestData.gold },
+            { type: "nengliang", addNum: harvestData.plt_sessence },
+            { type: "hongbao", addNum: harvestData.hb }
+        ];
+        this.updateMoney(arr);
+    };
+    Game.prototype.YiJianFly = function (goldImg, title, getuser, index, harvestData, type) {
+        var self = this;
         var onComplete2 = function () {
             if (goldImg.parent != null) {
                 goldImg.parent.removeChild(goldImg); //清空金币
@@ -773,13 +799,15 @@ var Game = (function (_super) {
                 this.scroll.scrollPolicyH = "on";
                 this.scroll.scrollPolicyV = "on";
                 this.canShouHUoSeed = [];
-                Director.getInstance().getUser(true);
+                // Director.getInstance().getUser(true);
+                self.updateMoneyByHarvestData(harvestData);
             }
             egret.Tween.get(goldImg).to({ alpha: 0 }, 200).call(onComplete2, this); //隐藏金币
         };
         var goldX = title.x + title.width / 2;
         var goldY = title.y + title.height / 2;
         egret.Tween.get(goldImg).to({ x: goldX, y: goldY, alpha: 1 }, 800, egret.Ease.sineOut).call(onComplete1, this);
+        self.clearPlantRoAnimalAni(index, type, 200);
     };
     Game.prototype.createBitmap = function (str, titleImg, tudiImg) {
         var goldImg = new egret.Bitmap(RES.getRes(str));
@@ -805,7 +833,7 @@ var Game = (function (_super) {
             }
         };
         var onComplete1 = function () {
-            this.lab_gold.text = DataUtils.floot(Number(this.lab_gold.text) + data.gold / 3) + "";
+            this.lab_gold.text = Math.floor(Number(this.lab_gold.text) + data.gold / 3) + "";
             egret.Tween.get(this.top_gold).to({
                 scaleX: 1.1,
                 scaleY: 1.1
@@ -982,13 +1010,36 @@ var Game = (function (_super) {
     };
     /////////////////////////////////////////NEW ADD///////////////////////
     // 更新货币
-    Game.prototype.updateMoney = function (data) {
+    Game.prototype.updateMoney = function (obj) {
+        var datas = [];
+        if (obj instanceof Array) {
+            datas = obj;
+        }
+        else {
+            datas.push(obj);
+        }
         var user = JSON.parse(egret.localStorage.getItem("user"));
-        if (data.type = "gold") {
-            user.gold += data.addNum;
-            this.lab_gold.text = DataUtils.floot(user.gold);
+        for (var i = 0; i < datas.length; ++i) {
+            var data = datas[i];
+            if (data.type == "gold") {
+                user.gold += data.addNum;
+                this.lab_gold.text = DataUtils.floot(user.gold);
+            }
+            else if (data.type == "nengliang") {
+                user.plt_sessence += data.addNum;
+                this.lab_nengLiang.text = DataUtils.floot(user.plt_sessence);
+            }
+            else if (data.type == "hongbao") {
+                user.hb += data.addNum;
+                this.lab_hongbao.text = DataUtils.floot(user.hb);
+            }
         }
         egret.localStorage.setItem("user", JSON.stringify(user));
+    };
+    // 获取金币数量
+    Game.prototype.getGold = function () {
+        var user = JSON.parse(egret.localStorage.getItem("user"));
+        return user.gold;
     };
     return Game;
 }(eui.Component));

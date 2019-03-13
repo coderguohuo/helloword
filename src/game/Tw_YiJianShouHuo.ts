@@ -184,18 +184,18 @@ class Tw_YiJianShouHuo extends eui.Component {
 		}
 
 
+		context.img.visible = false;
+		for (var i = 0; i < context.arrdata.length; i++) {
+			var index = game.canShouHUoSeed.indexOf(context.arrdata[i]);
+			if (index != -1) {
+				game.canShouHUoSeed.splice(index, 1);
+			}
+		}
+		context.Close();
+		game.yiJianShouHUo(context.arrdata, 1, context.data);
+		
 		FachUtils.Post("/plant/oneKeyHarvest", data, function (res) {
 			if (res.status) {
-				context.img.visible = false;
-				game.yiJianShouHUo(context.arrdata, 1);
-				for (var i = 0; i < context.arrdata.length; i++) {
-					var index = game.canShouHUoSeed.indexOf(context.arrdata[i]);
-					if (index != -1) {
-						game.canShouHUoSeed.splice(index, 1);
-					}
-
-				}
-				context.Close();
 			} else {
 				PopoP.getTips(res.message);
 			}
@@ -214,20 +214,21 @@ class Tw_YiJianShouHuo extends eui.Component {
 
 
 
+		context.img.visible = false;
+		for (var i = 0; i < context.arrdata.length; i++) {
+			var index = game.canShouHUoAnimal.indexOf(context.arrdata[i]);
+			console.log(index);
+
+			if (index != -1) {
+				game.canShouHUoAnimal.splice(index, 1);
+			}
+
+		}
+		context.Close();
+		game.yiJianShouHUo(context.arrdata, 2, context.data);
+
 		FachUtils.Post("/animal/oneKeyHarvest", data, function (res) {
 			if (res.status) {
-				context.img.visible = false;
-				game.yiJianShouHUo(context.arrdata, 2);
-				for (var i = 0; i < context.arrdata.length; i++) {
-					var index = game.canShouHUoAnimal.indexOf(context.arrdata[i]);
-					console.log(index);
-
-					if (index != -1) {
-						game.canShouHUoAnimal.splice(index, 1);
-					}
-
-				}
-				context.Close();
 			} else {
 				PopoP.getTips(res.message);
 			}

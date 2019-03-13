@@ -12,7 +12,7 @@ var game_file_list = [
 	"polyfill/promise.js",
 	"libs/modules/CryptoJs/crypto-js.js",
 	"bin-debug/pindou/GetPinDouItem.js",
-	"bin-debug/zhuanpan/ZhuanPan.js",
+	"bin-debug/haoyou/HaoYou_Iten.js",
 	"bin-debug/bahe/BaHe_LingQu.js",
 	"bin-debug/bahe/BaHe_Result.js",
 	"bin-debug/bahe/BaHe.js",
@@ -62,7 +62,7 @@ var game_file_list = [
 	"bin-debug/haoyou/BeiTou.js",
 	"bin-debug/haoyou/HaoYou_Add_Item.js",
 	"bin-debug/haoyou/HaoYou_Add.js",
-	"bin-debug/haoyou/HaoYou_Iten.js",
+	"bin-debug/bahe/BaHe_JInDu.js",
 	"bin-debug/haoyou/HaoYou_New_Item.js",
 	"bin-debug/haoyou/HaoYou_New.js",
 	"bin-debug/haoyou/HaoYou_TiShi.js",
@@ -113,7 +113,7 @@ var game_file_list = [
 	"bin-debug/zhuanpan/ZhuanPan_Item.js",
 	"bin-debug/zhuanpan/ZhuanPan_Result.js",
 	"bin-debug/zhuanpan/ZhuanPan_TiShi.js",
-	"bin-debug/bahe/BaHe_JInDu.js",
+	"bin-debug/zhuanpan/ZhuanPan.js",
 	//----auto game_file_list end----
 ];
 

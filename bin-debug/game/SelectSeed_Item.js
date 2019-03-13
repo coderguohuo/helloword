@@ -71,10 +71,17 @@ var SelectSeed_Item = (function (_super) {
         var game = Director.getInstance().gameLayer.getChildByName("game");
         game.updateMoney({ type: "gold", addNum: -seedData.plantPrice });
     };
+    // 点击种子判断是否可以种植 不经后端直接反馈玩家
     SelectSeed_Item.prototype.findEmptyLandAndPlant = function (seedData) {
         var game = Director.getInstance().gameLayer.getChildByName("game");
         var curSelectedLand = game.tudi_selected_pond;
         var willBean = null;
+        var needGold = seedData.plantPrice;
+        var curGold = game.getGold();
+        if (curGold < needGold) {
+            PopoP.getTips("金币不足哦");
+            return;
+        }
         if (curSelectedLand == 0) {
             for (var i = 0; i < game.TuDiBeans.length; ++i) {
                 var bean = game.TuDiBeans[i];
@@ -88,8 +95,13 @@ var SelectSeed_Item = (function (_super) {
         else {
             willBean = game.TuDiBeans[curSelectedLand - 1];
         }
+        var self = this;
         if (willBean) {
             this.updateLandToGrow(seedData, willBean, 200);
+            self.rec_up.touchEnabled = false;
+            egret.setTimeout(function () {
+                self.rec_up.touchEnabled = true;
+            }, self, 200);
             FachUtils.Post("/plant/" + curSelectedLand, { id: seedData._id }, function (res) {
                 if (res.status) {
                     game.tudi_selected_pond = 0;
