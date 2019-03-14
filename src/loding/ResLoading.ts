@@ -10,9 +10,14 @@ class ResLoading extends eui.Component {
 
 	public constructor() {
 		super();
-		this.skinName = "src/loding/ResLoadingSkin.exml";
+		this.skinName = "resource/skin/aResLoadingSkin.exml";
+		this.addEventListener(eui.UIEvent.COMPLETE, this.Complete, this);
 
-		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
+	}
+
+	public Complete(){
+		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
+		this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
 	}
 
 
@@ -22,16 +27,15 @@ class ResLoading extends eui.Component {
 		}
 		return this.loading;
 	}
-	private addStage() {
-		this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
+
+	private removeStage(){
+		this.removeEventListener(egret.Event.ENTER_FRAME, this.update, this);
+		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
 	}
 
 	private update() {
 		this.circle.rotation += 3;
 	}
-
-
-
 
 
 	private setProgress(current, total): void {

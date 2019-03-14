@@ -1,28 +1,35 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
 };
 var ResLoading = (function (_super) {
     __extends(ResLoading, _super);
     function ResLoading() {
         var _this = _super.call(this) || this;
         _this.loadGroups = []; //要加载的组
-        _this.skinName = "src/loding/ResLoadingSkin.exml";
-        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.addStage, _this);
+        _this.skinName = "resource/skin/aResLoadingSkin.exml";
+        _this.addEventListener(eui.UIEvent.COMPLETE, _this.Complete, _this);
         return _this;
     }
+    ResLoading.prototype.Complete = function () {
+        this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
+        this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
+    };
     ResLoading.getInstance = function () {
         if (this.loading == null) {
             this.loading = new ResLoading();
         }
         return this.loading;
     };
-    ResLoading.prototype.addStage = function () {
-        this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
+    ResLoading.prototype.removeStage = function () {
+        this.removeEventListener(egret.Event.ENTER_FRAME, this.update, this);
+        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
     };
     ResLoading.prototype.update = function () {
         this.circle.rotation += 3;

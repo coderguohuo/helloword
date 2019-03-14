@@ -131,16 +131,14 @@ class TuDiBean extends eui.Component {
 		console.log("this.data.status::::" + this.data.status);
 
 
+		this.img_yijian.visible = false;
+		this.img_shouhuo.visible = false;
 		if (this.data.status == 0) {
-			this.img_yijian.visible = false;
-			this.img_shouhuo.visible = false;
 			this.removeEventListener(egret.Event.ENTER_FRAME, this.Frame, this);
 			this.removeImg();
 			this.tudi.source = "tudi2_png";
 			//	this.tudi.touchEnabled = false;
 		} else if (this.data.status == 1) {
-			this.img_yijian.visible = false;
-			this.img_shouhuo.visible = false;
 			this.removeEventListener(egret.Event.ENTER_FRAME, this.Frame, this);
 			this.removeImg();
 			this.tudi.source = "tudi1_png";

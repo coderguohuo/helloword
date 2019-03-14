@@ -1,10 +1,12 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
 };
 var Main = (function (_super) {
     __extends(Main, _super);
@@ -12,6 +14,7 @@ var Main = (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.isThemeLoadEnd = false;
         _this.isResourceLoadEnd = false;
+        _this.isEnterScene = false;
         _this.isgetUser = false;
         return _this;
     }
@@ -23,9 +26,10 @@ var Main = (function (_super) {
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
         //Config loading process interface
+        RES.setMaxLoadingThread(16); // 设置资源加载线程数
+        egret.ImageLoader.crossOrigin = "anonymous"; //允许使用跨域资源
         // initialize the Resource loading library
         //初始化Resource资源加载库
-        RES.setMaxLoadingThread(32);
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
     };
@@ -51,7 +55,7 @@ var Main = (function (_super) {
      */
     Main.prototype.onThemeLoadComplete = function () {
         this.isThemeLoadEnd = true;
-        // this.createScene();
+        this.createScene();
     };
     /**
      * preload资源组加载完成
@@ -66,6 +70,7 @@ var Main = (function (_super) {
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
             RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
             this.isResourceLoadEnd = true;
+            // this.createScene();
         }
         else if (event.groupName == "loding") {
             if (!egret.Capabilities.isMobile) {
@@ -78,7 +83,8 @@ var Main = (function (_super) {
         }
     };
     Main.prototype.createScene = function () {
-        if (this.isResourceLoadEnd && this.isgetUser) {
+        if (!this.isEnterScene && this.isResourceLoadEnd && this.isThemeLoadEnd) {
+            this.isEnterScene = true;
             this.stage.removeChild(this.loadingView);
             this.startCreateScene();
         }
@@ -135,8 +141,8 @@ var Main = (function (_super) {
                 };
                 egret.localStorage.setItem("user", JSON.stringify(user));
                 // 进入场景 虽然无用户数据 创建过程中获取用户数据
-                context.stage.removeChild(context.loadingView);
-                context.startCreateScene();
+                context.createScene();
+                // context.Login(arr[0], pwd);
             }
             else {
                 PopoP.getTips("数据对接失败");
@@ -155,6 +161,8 @@ var Main = (function (_super) {
                 var user = JSON.parse(request.response).resource.user;
                 user.password = CryptoJS.HmacMD5(pwd, pwd).toString();
                 egret.localStorage.setItem("user", JSON.stringify(user));
+                // context.isgetUser = true;
+                // context.createScene();
             }
             else {
                 context.loadingView.textField.text = "信息传输出错,请重新打开";

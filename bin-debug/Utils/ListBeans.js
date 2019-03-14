@@ -13,8 +13,8 @@ var ListBeans = (function () {
         }
         return ListBeans.instance;
     };
+    ListBeans.instance = null;
     return ListBeans;
 }());
-ListBeans.instance = null;
 __reflect(ListBeans.prototype, "ListBeans");
 //# sourceMappingURL=ListBeans.js.map

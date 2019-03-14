@@ -1,10 +1,12 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
 };
 var AnimalBean = (function (_super) {
     __extends(AnimalBean, _super);
@@ -78,6 +80,7 @@ var AnimalBean = (function (_super) {
                     Director.getInstance().pushScene(item);
                     break;
             }
+            //	PopoP.getTips(str);
         }
         else if (this.data.status == 1) {
             var game = Director.getInstance().gameLayer.getChildByName("game");
@@ -105,6 +108,7 @@ var AnimalBean = (function (_super) {
             this.removeEventListener(egret.Event.ENTER_FRAME, this.Frame, this);
             this.removeImg();
             this.tudi.source = "tudianimal1_png";
+            //	this.tudi.touchEnabled = false;
         }
         else if (this.data.status == 1) {
             this.img_shouhuo.visible = false;

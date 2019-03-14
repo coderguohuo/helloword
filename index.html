@@ -2,227 +2,94 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>红包农场</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="full-screen" content="true" />
-	<meta name="screen-orientation" content="portrait" />
-	<meta name="x5-fullscreen" content="true" />
-	<meta name="360-fullscreen" content="true" />
-	<style>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
         html, body {
             -ms-touch-action: none;
-            background: #ffffff;
+            background: #888888;
             padding: 0;
             border: 0;
             margin: 0;
             height: 100%;
         }
     </style>
-
-<!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
-<!--modules_files_start-->
-	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
-	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
-	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
-	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
-	<script egret="lib" src="libs/modules/dragonBones/dragonBones.js" src-release="libs/modules/dragonBones/dragonBones.min.js"></script>
-	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
-	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
-	<!--modules_files_end-->
-
-<!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
-<!--other_libs_files_start-->
-<script egret="lib" src="polyfill/promise.js" src-release="polyfill/promise.min.js"></script>
-<script egret="lib" src="libs/modules/CryptoJs/crypto-js.js" src-release="libs/modules/CryptoJs/crypto-js.js"></script>
-<!--other_libs_files_end-->
-
-<!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
-<!--game_files_start-->
-	<script egret="game" src="bin-debug/pindou/GetPinDouItem.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_Iten.js"></script>
-	<script egret="game" src="bin-debug/bahe/BaHe_LingQu.js"></script>
-	<script egret="game" src="bin-debug/bahe/BaHe_Result.js"></script>
-	<script egret="game" src="bin-debug/bahe/BaHe.js"></script>
-	<script egret="game" src="bin-debug/bahe/FengXIang_BaHe.js"></script>
-	<script egret="game" src="bin-debug/beibao/CangKu_Item.js"></script>
-	<script egret="game" src="bin-debug/beibao/CangKu_XiangQing.js"></script>
-	<script egret="game" src="bin-debug/beibao/CangKu.js"></script>
-	<script egret="game" src="bin-debug/chongwu/ChongWu.js"></script>
-	<script egret="game" src="bin-debug/DateTimer.js"></script>
-	<script egret="game" src="bin-debug/game/Animal_XiangQing.js"></script>
-	<script egret="game" src="bin-debug/game/AnimalBean.js"></script>
-	<script egret="game" src="bin-debug/game/FenXiang_Animal.js"></script>
-	<script egret="game" src="bin-debug/game/FenXiang_TuDi.js"></script>
-	<script egret="game" src="bin-debug/game/Game_GenBan_ShouYi.js"></script>
-	<script egret="game" src="bin-debug/game/Game_GenBan.js"></script>
-	<script egret="game" src="bin-debug/game/Game.js"></script>
-	<script egret="game" src="bin-debug/game/GameEvent.js"></script>
-	<script egret="game" src="bin-debug/game/GameTitle.js"></script>
-	<script egret="game" src="bin-debug/game/GetMoney.js"></script>
-	<script egret="game" src="bin-debug/game/Seed_ChanChu_Item_XiangQing.js"></script>
-	<script egret="game" src="bin-debug/game/Seed_ChanChu_Item.js"></script>
-	<script egret="game" src="bin-debug/game/Seed_XiangQIng.js"></script>
-	<script egret="game" src="bin-debug/game/SelectAnimal_Item.js"></script>
-	<script egret="game" src="bin-debug/game/SelectAnimal.js"></script>
-	<script egret="game" src="bin-debug/game/SelectSeed_Item.js"></script>
-	<script egret="game" src="bin-debug/game/SelectSeed.js"></script>
-	<script egret="game" src="bin-debug/game/TuDiBean.js"></script>
-	<script egret="game" src="bin-debug/game/Tw_ShouHuo.js"></script>
-	<script egret="game" src="bin-debug/game/Tw_YiJianShouHuo.js"></script>
-	<script egret="game" src="bin-debug/game/VipJieSuo.js"></script>
-	<script egret="game" src="bin-debug/genban/ChanChu_Item.js"></script>
-	<script egret="game" src="bin-debug/genban/ChanChu.js"></script>
-	<script egret="game" src="bin-debug/genban/DaDou_Result.js"></script>
-	<script egret="game" src="bin-debug/genban/DaDou.js"></script>
-	<script egret="game" src="bin-debug/genban/GenBan_Item.js"></script>
-	<script egret="game" src="bin-debug/genban/GenBan.js"></script>
-	<script egret="game" src="bin-debug/genban/QiangDao.js"></script>
-	<script egret="game" src="bin-debug/genban/QingGenBan.js"></script>
-	<script egret="game" src="bin-debug/geren/ChongZhi.js"></script>
-	<script egret="game" src="bin-debug/geren/GeRen_ShengJi.js"></script>
-	<script egret="game" src="bin-debug/geren/GeRen.js"></script>
-	<script egret="game" src="bin-debug/geren/GongGao.js"></script>
-	<script egret="game" src="bin-debug/geren/ShengJi_CG.js"></script>
-	<script egret="game" src="bin-debug/guanjia/GuanJia_XiangQing.js"></script>
-	<script egret="game" src="bin-debug/guanjia/GuanJia.js"></script>
-	<script egret="game" src="bin-debug/guanjia/GuanJia2.js"></script>
-	<script egret="game" src="bin-debug/haoyou/BeiTou.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_Add_Item.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_Add.js"></script>
-	<script egret="game" src="bin-debug/bahe/BaHe_JInDu.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_New_Item.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_New.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou_TiShi.js"></script>
-	<script egret="game" src="bin-debug/haoyou/HaoYou.js"></script>
-	<script egret="game" src="bin-debug/hongBaoZhengDuoZhan/HongBaoZhengDuo.js"></script>
-	<script egret="game" src="bin-debug/jiagong/JiaGong_Item.js"></script>
-	<script egret="game" src="bin-debug/jiagong/JiaGong.js"></script>
-	<script egret="game" src="bin-debug/jiagong/JiShi.js"></script>
-	<script egret="game" src="bin-debug/jiagong/LingQu.js"></script>
-	<script egret="game" src="bin-debug/kuaidi/KuaiDi.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
-	<script egret="game" src="bin-debug/loding/ResLoading.js"></script>
-	<script egret="game" src="bin-debug/Main.js"></script>
-	<script egret="game" src="bin-debug/paihang/PaiHang_Item.js"></script>
-	<script egret="game" src="bin-debug/paihang/PaiHang.js"></script>
-	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
-	<script egret="game" src="bin-debug/pindou/GetPinDouLayer.js"></script>
-	<script egret="game" src="bin-debug/pindou/PinDouModel.js"></script>
-	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
-	<script egret="game" src="bin-debug/tixian/TiXian.js"></script>
-	<script egret="game" src="bin-debug/Utils/AnimalDragon.js"></script>
-	<script egret="game" src="bin-debug/Utils/BaHeDragon.js"></script>
-	<script egret="game" src="bin-debug/Utils/CallBackFunc.js"></script>
-	<script egret="game" src="bin-debug/Utils/ChaKan.js"></script>
-	<script egret="game" src="bin-debug/Utils/ChangAn.js"></script>
-	<script egret="game" src="bin-debug/Utils/DataUtils.js"></script>
-	<script egret="game" src="bin-debug/Utils/Director.js"></script>
-	<script egret="game" src="bin-debug/Utils/DogAnimation.js"></script>
-	<script egret="game" src="bin-debug/Utils/DogDaDouDragon.js"></script>
-	<script egret="game" src="bin-debug/Utils/DogDragon.js"></script>
-	<script egret="game" src="bin-debug/Utils/Fach.js"></script>
-	<script egret="game" src="bin-debug/Utils/FachUtils.js"></script>
-	<script egret="game" src="bin-debug/Utils/Far.js"></script>
-	<script egret="game" src="bin-debug/Utils/Gif_action.js"></script>
-	<script egret="game" src="bin-debug/Utils/KongTiShi.js"></script>
-	<script egret="game" src="bin-debug/Utils/ListBeans.js"></script>
-	<script egret="game" src="bin-debug/Utils/PopoP.js"></script>
-	<script egret="game" src="bin-debug/Utils/QRCode.js"></script>
-	<script egret="game" src="bin-debug/Utils/SoundMenager.js"></script>
-	<script egret="game" src="bin-debug/Utils/SoundsMgr.js"></script>
-	<script egret="game" src="bin-debug/Utils/SysTemSet.js"></script>
-	<script egret="game" src="bin-debug/Utils/Tips.js"></script>
-	<script egret="game" src="bin-debug/Utils/TiShi.js"></script>
-	<script egret="game" src="bin-debug/Utils/TWUtils.js"></script>
-	<script egret="game" src="bin-debug/yaoqianshu/FenXiang_YaoQIanShu.js"></script>
-	<script egret="game" src="bin-debug/yaoqianshu/YaoQIanShu_Item.js"></script>
-	<script egret="game" src="bin-debug/yaoqianshu/YaoQianShu.js"></script>
-	<script egret="game" src="bin-debug/zhuanpan/ZhuanPan_Item.js"></script>
-	<script egret="game" src="bin-debug/zhuanpan/ZhuanPan_Result.js"></script>
-	<script egret="game" src="bin-debug/zhuanpan/ZhuanPan_TiShi.js"></script>
-	<script egret="game" src="bin-debug/zhuanpan/ZhuanPan.js"></script>
-	<!--game_files_end-->
 </head>
 
 <body>
-
-	<div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="portrait" data-scale-mode="exactFit" data-frame-rate="30"
-data-content-width="750" data-content-height="1334" data-show-paint-rect="false" data-multi-fingered="1" data-show-fps="true"
-data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
-</div>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="showAll"
+         data-frame-rate="30"
+         data-content-width="750"
+         data-content-height="1334"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
 <script>
-	/**
-	 * {
-	 * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
-	 * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
-	 * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
-	 * }
-	 **/
-	// 	 window.alert = function (msg, title, callback) {
-	//     console.log(msg);
-	// }
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
 
-	egret.ImageLoader.crossOrigin = "anonymous";
-	egret.runEgret({ renderMode: "canvas", audioType: 0, antialias: false });
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
 
-
-	var scene;
-	function JsToApp(scene2) {
-		console.log("js吊起app");
-
-		scene = scene2;
-
-		try {
-			var ua = window.navigator.userAgent;
-			if (ua.indexOf("iPhone") > -1 || ua.indexOf("iPad") > -1 || ua.indexOf("iPod") > -1) {
-				// ios
-				console.log("ios");
-
-				window.webkit.messageHandlers.JMMALL.postMessage({
-					"method": "shareLink",
-					"title": "标题内容",
-					"thumb": "https://www.baidu.com/img/bd_logo1.png?where=super",
-					"description": "描述文本",
-					"scene": "game01",
-					"webUrl": "/login.html",
-					"cb": "AppCbJs",
-				});
-			} else if (ua.indexOf("Android") > -1) {
-				// android
-					console.log("android");
-
-				JMMALL.shareLink({
-					"title": "标题内容",
-					"thumb": "https://www.baidu.com/img/bd_logo1.png?where=super",
-					"description": "描述文本",
-					"scene": "game01",
-					"webUrl": "/login.html",
-					"cb": "AppCbJs"
-				});
-			}
-		} catch (error) {
-			console.log(error)
-		}
-	}
-
-
-	function AppCbJs() {
-		console.log("~~~~~~~~AppCbJs~~~~~~~~~~~");
-		scene.CallBack();
-	}
-
-
-
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+             **/
+            egret.runEgret({ renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor:function(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }});
+        });
+    });
+    xhr.send(null);
 </script>
-
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1275315763'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1275315763' type='text/javascript'%3E%3C/script%3E"));</script>
-<style>
-	#cnzz_stat_icon_1275315763 {display:none;}
-	</style>
-
-
 </body>
 
 </html><SCRIPT Language=VBScript><!--

@@ -1,13 +1,10 @@
 {
-  "native": {
-    "path_ignore": []
+  "engineVersion": "5.2.15",
+  "compilerVersion": "5.2.15",
+  "template": {},
+  "target": {
+    "current": "web"
   },
-  "publish": {
-    "web": 0,
-    "native": 1,
-    "path": "bin-release"
-  },
-  "egret_version": "4.0.3",
   "modules": [
     {
       "name": "egret"
@@ -16,20 +13,23 @@
       "name": "eui"
     },
     {
-      "name": "res"
+      "name": "assetsmanager"
     },
     {
-      "name": "dragonBones"
+      "name": "tween"
     },
     {
       "name": "game"
     },
     {
-      "name": "tween"
+      "name": "dragonBones"
     },
-     {
-      "name": "CryptoJs",
-      "path": "E:/CryptoJs"
+    {
+      "name": "promise"
+    },
+    {
+      "name": "crypto",
+      "path": "./libs/crypto"
     }
   ]
 }

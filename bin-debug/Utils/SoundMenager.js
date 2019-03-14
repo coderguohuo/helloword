@@ -27,18 +27,22 @@ var SoundMenager = (function () {
     };
     SoundMenager.prototype.PlayClick = function () {
         if (this.IsSound) {
+            //this._click.play(0, 1);
         }
     };
     SoundMenager.prototype.PlayRight = function () {
         if (this.IsSound) {
+            //this._right.play(0, 1);
         }
     };
     SoundMenager.prototype.PlayWrong = function () {
         if (this.IsSound) {
+            //this._wrong.play(0, 1);
         }
     };
     SoundMenager.prototype.PlayWord = function () {
         if (this.IsSound) {
+            //	this._word.play(0, 1);
         }
     };
     Object.defineProperty(SoundMenager.prototype, "IsMusic", {

@@ -42,10 +42,11 @@ class Main extends eui.UILayer {
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
         //Config loading process interface
 
+        RES.setMaxLoadingThread(16); // 设置资源加载线程数
+        egret.ImageLoader.crossOrigin = "anonymous"; //允许使用跨域资源
 
         // initialize the Resource loading library
         //初始化Resource资源加载库
-        RES.setMaxLoadingThread(32);
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
     }
@@ -75,7 +76,7 @@ class Main extends eui.UILayer {
      */
     private onThemeLoadComplete(): void {
         this.isThemeLoadEnd = true;
-        // this.createScene();
+        this.createScene();
     }
     private isResourceLoadEnd: boolean = false;
     /**
@@ -102,12 +103,13 @@ class Main extends eui.UILayer {
             this.stage.addChild(this.loadingView);
         }
     }
+
+    private isEnterScene = false;
     private createScene() {
-        if (this.isResourceLoadEnd  && this.isgetUser
-        ) {
+        if (!this.isEnterScene && this.isResourceLoadEnd && this.isThemeLoadEnd) {
+            this.isEnterScene = true;
             this.stage.removeChild(this.loadingView);
-       this.startCreateScene();
-     
+            this.startCreateScene();
         }
     }
     /**
@@ -142,6 +144,7 @@ class Main extends eui.UILayer {
      * 创建场景界面
      * Create scene interface
      */
+
     protected startCreateScene(): void {
         egret.Ticker.getInstance().register(
             function (fram: number) { dragonBones.WorldClock.clock.advanceTime(fram / 1000) }, this
@@ -174,8 +177,7 @@ class Main extends eui.UILayer {
                 egret.localStorage.setItem("user", JSON.stringify(user));
 
                 // 进入场景 虽然无用户数据 创建过程中获取用户数据
-                context.stage.removeChild(context.loadingView);
-                context.startCreateScene();
+                context.createScene();
                 
                 // context.Login(arr[0], pwd);
             } else {

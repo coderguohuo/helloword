@@ -1,10 +1,12 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
 };
 var Game = (function (_super) {
     __extends(Game, _super);
@@ -135,7 +137,7 @@ var Game = (function (_super) {
             case this.img_tixian:
                 Director.getInstance().pushSceneNoTw(new TiXian());
                 break;
-            case this.rec_yangFengChang:
+            case this.rec_yangFengChang://养蜂场
                 if (this.suo_fengchang.visible) {
                     PopoP.getTips("等级不足,暂未开放");
                 }
@@ -143,7 +145,7 @@ var Game = (function (_super) {
                     this.FengChang(this.yangfengdata);
                 }
                 break;
-            case this.rec_shenHaiDaLao:
+            case this.rec_shenHaiDaLao://深海打捞
                 if (this.suo_shenhaidalao.visible) {
                     PopoP.getTips("等级不足,暂未开放");
                 }
@@ -154,19 +156,19 @@ var Game = (function (_super) {
             case this.img_hongbao:
                 this.openHongBao();
                 break;
-            case this.img_yaoqianshu:
+            case this.img_yaoqianshu://摇钱树
                 //	PopoP.getTips("等级不足,暂未开放");
                 var yqs = new YaoQianShu();
                 Director.getInstance().pushSceneNoTw(yqs);
                 yqs.setType(1);
                 break;
-            case this.img_yqs_menu:
+            case this.img_yqs_menu://摇钱树
                 //	PopoP.getTips("等级不足,暂未开放");
                 var yqs2 = new YaoQianShu();
                 Director.getInstance().pushSceneNoTw(yqs2);
                 yqs2.setType(2);
                 break;
-            case this.rec_congLinTanXian:
+            case this.rec_congLinTanXian://丛林探险
                 if (this.suo_conglintanxian.visible) {
                     PopoP.getTips("等级不足,暂未开放");
                 }
@@ -174,7 +176,7 @@ var Game = (function (_super) {
                     this.FengChang(this.conglindata);
                 }
                 break;
-            case this.rec_waKuang:
+            case this.rec_waKuang://挖矿
                 if (this.suo_shenshanwakuang.visible) {
                     PopoP.getTips("等级不足,暂未开放");
                 }
@@ -182,7 +184,7 @@ var Game = (function (_super) {
                     this.FengChang(this.wakuangdata);
                 }
                 break;
-            case this.rec_buYuMaTou:
+            case this.rec_buYuMaTou://捕鱼码头
                 if (this.suo_buyumatou.visible) {
                     PopoP.getTips("等级不足,暂未开放");
                 }
@@ -263,8 +265,10 @@ var Game = (function (_super) {
         this.rec_jingyan.width = scale * 90;
         //判断是否有管家
         if (this.user.guanjiaTime && this.user.guanjiaTime >= (new Date().getTime() - Director.getInstance().ShiJianCha)) {
+            //有管家
         }
         else {
+            //PopoP.getTips("没有管家")
         }
         this.BaHeKaiQi();
         this.getTouQUinFo();
@@ -498,8 +502,13 @@ var Game = (function (_super) {
                     context.suo_hongbaozhengduo.visible = true;
                 }
                 if (context.bahedate.joinStatus == 2) {
+                    //上次参加活动未领取奖品
+                    // var itembage = new BaHe_Result()
+                    // itembage.setDate(context.bahedate);
+                    // Director.getInstance().pushSceneScal(itembage);
                 }
                 if (context.bahedate.joinStatus == 1) {
+                    // 参加活动 
                 }
             }
         }, function (res) {
@@ -750,6 +759,10 @@ var Game = (function (_super) {
             if (sum == currentCount) {
                 this.scroll.scrollPolicyH = "on";
                 this.scroll.scrollPolicyV = "on";
+                // Director.getInstance().getUser(true);
+                //手动设置状态 单个更新
+                // context.TuDiBeans[pond].data.status = 1;
+                // context.TuDiBeans[pond].setDate(context.TuDiBeans[pond].data);
             }
         };
         context.clearPlantRoAnimalAni(index, type, 200);

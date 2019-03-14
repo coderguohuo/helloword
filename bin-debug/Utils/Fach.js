@@ -116,18 +116,18 @@ var Fach = (function () {
         }
         return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
     };
+    //   public static host = "http://192.168.1.146:6100";
+    //  public static host = "http://47.92.88.214:6100"; // 测试
+    Fach.host = "http://api.hbnc.jimiws.com"; // 正式
+    // public static host = "http://t.api.hbnc.jimiws.com"
+    Fach.path = "http://qr.liantu.com/api.php?text=http:///?user=";
+    Fach.min1 = 300;
+    Fach.max1 = 800;
+    Fach.min2 = 1000;
+    Fach.max2 = 3000;
+    Fach.min3 = 2000;
+    Fach.max3 = 5000;
     return Fach;
 }());
-//   public static host = "http://192.168.1.146:6100";
-//  public static host = "http://47.92.88.214:6100"; // 测试
-Fach.host = "http://api.hbnc.jimiws.com"; // 正式
-// public static host = "http://t.api.hbnc.jimiws.com"
-Fach.path = "http://qr.liantu.com/api.php?text=http:///?user=";
-Fach.min1 = 300;
-Fach.max1 = 800;
-Fach.min2 = 1000;
-Fach.max2 = 3000;
-Fach.min3 = 2000;
-Fach.max3 = 5000;
 __reflect(Fach.prototype, "Fach");
 //# sourceMappingURL=Fach.js.map

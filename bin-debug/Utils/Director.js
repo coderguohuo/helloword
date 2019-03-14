@@ -281,8 +281,8 @@ var Director = (function () {
             PopoP.getTips("登录出错,请重新登录");
         }
     };
+    Director.instance = null;
     return Director;
 }());
-Director.instance = null;
 __reflect(Director.prototype, "Director");
 //# sourceMappingURL=Director.js.map

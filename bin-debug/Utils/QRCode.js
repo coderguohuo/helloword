@@ -57,6 +57,7 @@ var QRCode = (function () {
             this.htmlCode.style.height = height * hScale + "px";
             this.htmlCode.style.left = xPos * wScale + "px";
             this.htmlCode.style.top = yPos * hScale + "px";
+            // //竖屏
         }
         else {
             var wScale = document.body.clientWidth / 750;

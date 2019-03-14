@@ -85,10 +85,10 @@ var SoundsMgr = (function () {
             return b == "1";
         }
     };
+    SoundsMgr.bgSoundChannel = null;
+    SoundsMgr.value = 1;
+    SoundsMgr.isfinish = false;
     return SoundsMgr;
 }());
-SoundsMgr.bgSoundChannel = null;
-SoundsMgr.value = 1;
-SoundsMgr.isfinish = false;
 __reflect(SoundsMgr.prototype, "SoundsMgr");
 //# sourceMappingURL=SoundsMgr.js.map

@@ -1,10 +1,12 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
 };
 var TuDiBean = (function (_super) {
     __extends(TuDiBean, _super);
@@ -97,16 +99,15 @@ var TuDiBean = (function (_super) {
         this.harvestDate = null;
         // 0 未解锁 1 解锁闲置 2 生长中 3 已成熟
         console.log("this.data.status::::" + this.data.status);
+        this.img_yijian.visible = false;
+        this.img_shouhuo.visible = false;
         if (this.data.status == 0) {
-            this.img_yijian.visible = false;
-            this.img_shouhuo.visible = false;
             this.removeEventListener(egret.Event.ENTER_FRAME, this.Frame, this);
             this.removeImg();
             this.tudi.source = "tudi2_png";
+            //	this.tudi.touchEnabled = false;
         }
         else if (this.data.status == 1) {
-            this.img_yijian.visible = false;
-            this.img_shouhuo.visible = false;
             this.removeEventListener(egret.Event.ENTER_FRAME, this.Frame, this);
             this.removeImg();
             this.tudi.source = "tudi1_png";

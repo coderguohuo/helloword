@@ -33,7 +33,7 @@ class LoadingUI extends eui.Component {
         super();
 
         this.addEventListener(eui.UIEvent.COMPLETE, this.Complete, this);
-        this.skinName = "resource/skin/loding.exml";
+        this.skinName = "resource/skin/aloding.exml";
         //   egret.setTimeout(this.createView, this, 5000);
     }
 
