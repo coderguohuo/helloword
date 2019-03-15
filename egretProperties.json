@@ -31,5 +31,8 @@
       "name": "crypto",
       "path": "./libs/crypto"
     }
-  ]
+  ],
+  "eui":{
+    "exmlRoot":["resource/eui_skins", "resource/skin"]
+  }
 }

@@ -14,10 +14,58 @@ class SelectSeed extends eui.Component {
 	public img_close: eui.Image;
 
 	private group_biaoqian: eui.Group;
+
+	private scrSeed: eui.Scroller;
+
 	public constructor() {
 		super();
 		this.skinName = "selectSeed"
 		this.name = "selectseed";
+	}
+
+	public readonly DragedSize = 60;
+	public dragedSeedData = null;
+	public setSeedBeClicked(data){
+		this.dragedSeedData = data;
+		this.list.scrollEnabled = false;
+		this.scrSeed.scrollPolicyH = eui.ScrollPolicy.OFF;
+
+		this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+		this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+	}
+
+	public imgDragSeed: eui.Image;
+	public onTouchMove(e: egret.TouchEvent){
+		if(!this.dragedSeedData) return;
+
+		console.log("stage-> moving now ! Mouse: [X:"+e.stageX+",Y:"+e.stageY+"]");
+		
+		if(this.imgDragSeed == null){
+			let imgDragSeed = new eui.Image(Fach.host + this.dragedSeedData.img);
+			imgDragSeed.width = imgDragSeed.height = this.DragedSize;
+			this.addChild(imgDragSeed);
+			this.imgDragSeed = imgDragSeed;
+		}
+
+		let p = this.globalToLocal(e.stageX, e.stageY);
+		this.imgDragSeed.x = p.x - this.DragedSize/2; this.imgDragSeed.y = p.y - this.DragedSize/2;
+
+		let game = <Game>Director.getInstance().gameLayer.getChildByName("game");
+		game.tryToPlant(e.stageX, e.stageY, this.dragedSeedData);
+	}
+
+	public onTouchEnd(e:egret.TouchEvent){
+		console.log("stage-> moving over ! Mouse: [X:"+e.stageX+",Y:"+e.stageY+"]");
+
+		this.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+		this.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+
+		if(this.imgDragSeed){
+			this.removeChild(this.imgDragSeed);
+			this.imgDragSeed = null;
+		}
+		this.dragedSeedData = null;
+		this.scrSeed.scrollPolicyH = eui.ScrollPolicy.AUTO;
 	}
 
 
@@ -25,6 +73,10 @@ class SelectSeed extends eui.Component {
 		var context = this;
 		this.img_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Close, this);
 		this.addEventListener("touchTap", this.Touch, this);
+
+		this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+		this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+
 
 		if (ListBeans.getInstance().seedMianBan != null) {
 			var res = ListBeans.getInstance().seedMianBan;

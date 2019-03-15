@@ -14,6 +14,37 @@ class SelectSeed_Item extends eui.ItemRenderer {
 		this.rec_up.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Touch, this);
 		this.rec_down.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Down, this);
 
+		this.rec_up.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchBegin, this);
+		this.rec_up.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+	}
+
+	public touchSeedP = null;
+	public onTouchMove(e: egret.TouchEvent){
+		if(this.touchSeedP == null) return;
+
+		let preP = this.touchSeedP;
+		let curP = {x: e.stageX, y: e.stageY};
+
+		let a = Math.abs(curP.x - preP.x);
+		let b = preP.y - curP.y;
+		if(b / a < 1.5){
+			// this.touchSeedP = null;
+			return;
+		}
+		let selectSeed = <SelectSeed>Director.getInstance().gameLayer.getChildByName("selectseed");
+		selectSeed.setSeedBeClicked(this.data);
+		this.touchSeedP = null;
+
+
+			// let game = <Game>Director.getInstance().gameLayer.getChildByName("game");
+			// game.setSeedBeClicked(this.data);
+			// console.log("seedItem-> moving now ! Mouse: [X:"+e.stageX+",Y:"+e.stageY+"]");
+
+	}
+
+	public onTouchBegin(e: egret.TouchEvent){
+		if(this.isClock) return;
+		this.touchSeedP = {x: e.stageX, y: e.stageY};
 	}
 
 	public createChildren() {
@@ -106,13 +137,13 @@ class SelectSeed_Item extends eui.ItemRenderer {
 			willBean = game.TuDiBeans[curSelectedLand - 1];
 		}
 
-		let self = this;
+		// let self = this;
 		if(willBean){
 			this.updateLandToGrow(seedData, willBean, 200);
-			self.rec_up.touchEnabled = false;
-			egret.setTimeout(function(){
-				self.rec_up.touchEnabled = true;
-			}, self, 100);
+			// self.rec_up.touchEnabled = false;
+			// egret.setTimeout(function(){
+			// 	self.rec_up.touchEnabled = true;
+			// }, self, 100);
 			FachUtils.Post("/plant/" + curSelectedLand, {id: seedData._id}, function(res){
 				if(res.status){
 					game.tudi_selected_pond = 0;

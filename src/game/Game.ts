@@ -113,6 +113,114 @@ class Game extends eui.Component {
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.Remove, this);
 		this.vip_tudi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.VipTuDi, this);
 		this.vip_animal.addEventListener(egret.TouchEvent.TOUCH_TAP, this.VipAnimal, this);
+
+		// this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+		this.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+	}
+
+	private seedBeClicked = false;
+	private beClickedSeedData = null;
+	public setSeedBeClicked(data){
+		this.seedBeClicked = true;
+		this.beClickedSeedData = data;
+		this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+	}
+
+	public tryToPlant(stageX, stageY, seedData){
+		for(let i = 0; i < this.TuDiBeans.length; ++i){
+			let tudiBean = <TuDiBean>this.TuDiBeans[i];
+			if(tudiBean.data.status == 1){
+				let imgTudi = tudiBean.tudi;
+				imgTudi.pixelHitTest = true;
+				let isHit = imgTudi.hitTestPoint(stageX, stageY);
+				if(isHit){
+					this.tudi_selected.x = imgTudi.x;
+					this.tudi_selected.y = imgTudi.y;
+					this.tudi_selected.visible = true;
+					this.group_game.setChildIndex(this.tudi_selected, this.group_game.getChildIndex(imgTudi) + 1);
+					this.tudi_selected_pond = i + 1;
+					this.findEmptyLandAndPlant(seedData);
+					break;
+				}
+			}
+
+		}
+	}
+
+	updateLandToGrow(seedData, tuDiBean, delay = 0){
+		let needTime = seedData.growTime * 1000;
+		let curTime = new Date().getTime() - Director.getInstance().ShiJianCha;
+
+		let curData = tuDiBean.data;
+		curData.status = 2; // 生长中 
+		curData.plantTime = curTime + delay;
+		curData.harvestTime = curData.plantTime + needTime;
+		curData.animationId = seedData.animationId;
+
+		tuDiBean.init();
+		
+		let game = <Game>Director.getInstance().gameLayer.getChildByName("game");
+		game.updateMoney({type: "gold", addNum: -seedData.plantPrice});
+	}
+
+	// 点击种子判断是否可以种植 不经后端直接反馈玩家
+	findEmptyLandAndPlant(seedData){
+		let game = <Game>Director.getInstance().gameLayer.getChildByName("game");
+		let curSelectedLand = game.tudi_selected_pond;
+		let willBean = null;
+
+		let needGold = seedData.plantPrice;
+		let curGold = game.getGold();
+		if(curGold < needGold){
+			PopoP.getTips("金币不足哦");
+			return ;
+		}
+		
+
+		if(curSelectedLand == 0){
+			for(let i = 0; i < game.TuDiBeans.length; ++i){
+				let bean = game.TuDiBeans[i];
+				let data = bean.data;
+				if(data.status == 1){
+					willBean = bean;
+					break;
+				}
+			}
+		}else{
+			willBean = game.TuDiBeans[curSelectedLand - 1];
+		}
+
+		// let self = this;
+		if(willBean){
+			this.updateLandToGrow(seedData, willBean, 200);
+			// self.rec_up.touchEnabled = false;
+			// egret.setTimeout(function(){
+			// 	self.rec_up.touchEnabled = true;
+			// }, self, 100);
+			FachUtils.Post("/plant/" + curSelectedLand, {id: seedData._id}, function(res){
+				if(res.status){
+					game.tudi_selected_pond = 0;
+				}else if(res.status == 1081){
+					Director.getInstance().pushScene(new Seed_XiangQIng(seedData, 2));
+					PopoP.getTips(res.message);
+				}else{
+					PopoP.getTips(res.message);
+				}
+			}, function(res){ }, false);
+		}else{
+			Director.getInstance().pushScene(new Seed_XiangQIng(seedData, 2));
+			PopoP.getTips("无闲置土地了哦");
+		}
+	}
+
+	public onTouchMove(e: egret.TouchEvent){
+		if(this.seedBeClicked){
+			console.log("stage-> moving now ! Mouse: [X:"+e.stageX+",Y:"+e.stageY+"]");
+		}
+	}
+
+	public onTouchEnd(e: egret.TouchEvent){
+		// this.seedBe
 	}
 
 	public createChildren() {
@@ -730,7 +838,7 @@ class Game extends eui.Component {
 
 		if (item != null) {
 			egret.Tween.get(item).to({
-				y: Director.getInstance().gameLayer.stageHeight
+				y: 392
 			}, 200).call(function () {
 				item.parent.removeChild(item);
 				this.group_menu.visible = true;
@@ -765,10 +873,10 @@ class Game extends eui.Component {
 		this.group_menu.visible = false;
 		var item = new SelectSeed();
 		// item.x = this.tudi.x + this.tudi.width / 2 - item.width / 2 ;
-		item.y = Director.getInstance().gameLayer.stageHeight;
+		item.y = 392;
 		Director.getInstance().gameLayer.addChild(item);
 		egret.Tween.get(item).to({
-			y: Director.getInstance().gameLayer.stageHeight - item.height
+			y: 0
 		}, 200);
 	}
 

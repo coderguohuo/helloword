@@ -16,6 +16,8 @@ var Game = (function (_super) {
         _this.animal_selected_pond = 0;
         _this.canShouHUoSeed = []; //可收获的种子地块集合
         _this.canShouHUoAnimal = []; //可收获的种子地块集合
+        _this.seedBeClicked = false;
+        _this.beClickedSeedData = null;
         _this.tudis = [];
         _this.TuDiBeans = [];
         _this.animaltudis = [];
@@ -31,8 +33,104 @@ var Game = (function (_super) {
         _this.addEventListener(egret.Event.REMOVED_FROM_STAGE, _this.Remove, _this);
         _this.vip_tudi.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.VipTuDi, _this);
         _this.vip_animal.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.VipAnimal, _this);
+        // this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        _this.addEventListener(egret.TouchEvent.TOUCH_END, _this.onTouchEnd, _this);
         return _this;
     }
+    Game.prototype.setSeedBeClicked = function (data) {
+        this.seedBeClicked = true;
+        this.beClickedSeedData = data;
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+    };
+    Game.prototype.tryToPlant = function (stageX, stageY, seedData) {
+        for (var i = 0; i < this.TuDiBeans.length; ++i) {
+            var tudiBean_1 = this.TuDiBeans[i];
+            if (tudiBean_1.data.status == 1) {
+                var imgTudi = tudiBean_1.tudi;
+                imgTudi.pixelHitTest = true;
+                var isHit = imgTudi.hitTestPoint(stageX, stageY);
+                if (isHit) {
+                    this.tudi_selected.x = imgTudi.x;
+                    this.tudi_selected.y = imgTudi.y;
+                    this.tudi_selected.visible = true;
+                    this.group_game.setChildIndex(this.tudi_selected, this.group_game.getChildIndex(imgTudi) + 1);
+                    this.tudi_selected_pond = i + 1;
+                    this.findEmptyLandAndPlant(seedData);
+                    break;
+                }
+            }
+        }
+    };
+    Game.prototype.updateLandToGrow = function (seedData, tuDiBean, delay) {
+        if (delay === void 0) { delay = 0; }
+        var needTime = seedData.growTime * 1000;
+        var curTime = new Date().getTime() - Director.getInstance().ShiJianCha;
+        var curData = tuDiBean.data;
+        curData.status = 2; // 生长中 
+        curData.plantTime = curTime + delay;
+        curData.harvestTime = curData.plantTime + needTime;
+        curData.animationId = seedData.animationId;
+        tuDiBean.init();
+        var game = Director.getInstance().gameLayer.getChildByName("game");
+        game.updateMoney({ type: "gold", addNum: -seedData.plantPrice });
+    };
+    // 点击种子判断是否可以种植 不经后端直接反馈玩家
+    Game.prototype.findEmptyLandAndPlant = function (seedData) {
+        var game = Director.getInstance().gameLayer.getChildByName("game");
+        var curSelectedLand = game.tudi_selected_pond;
+        var willBean = null;
+        var needGold = seedData.plantPrice;
+        var curGold = game.getGold();
+        if (curGold < needGold) {
+            PopoP.getTips("金币不足哦");
+            return;
+        }
+        if (curSelectedLand == 0) {
+            for (var i = 0; i < game.TuDiBeans.length; ++i) {
+                var bean = game.TuDiBeans[i];
+                var data = bean.data;
+                if (data.status == 1) {
+                    willBean = bean;
+                    break;
+                }
+            }
+        }
+        else {
+            willBean = game.TuDiBeans[curSelectedLand - 1];
+        }
+        // let self = this;
+        if (willBean) {
+            this.updateLandToGrow(seedData, willBean, 200);
+            // self.rec_up.touchEnabled = false;
+            // egret.setTimeout(function(){
+            // 	self.rec_up.touchEnabled = true;
+            // }, self, 100);
+            FachUtils.Post("/plant/" + curSelectedLand, { id: seedData._id }, function (res) {
+                if (res.status) {
+                    game.tudi_selected_pond = 0;
+                }
+                else if (res.status == 1081) {
+                    Director.getInstance().pushScene(new Seed_XiangQIng(seedData, 2));
+                    PopoP.getTips(res.message);
+                }
+                else {
+                    PopoP.getTips(res.message);
+                }
+            }, function (res) { }, false);
+        }
+        else {
+            Director.getInstance().pushScene(new Seed_XiangQIng(seedData, 2));
+            PopoP.getTips("无闲置土地了哦");
+        }
+    };
+    Game.prototype.onTouchMove = function (e) {
+        if (this.seedBeClicked) {
+            console.log("stage-> moving now ! Mouse: [X:" + e.stageX + ",Y:" + e.stageY + "]");
+        }
+    };
+    Game.prototype.onTouchEnd = function (e) {
+        // this.seedBe
+    };
     Game.prototype.createChildren = function () {
         this.initView();
         Director.getInstance().getUser(true);
@@ -522,7 +620,7 @@ var Game = (function (_super) {
         this.tudi_selected_pond = 0;
         if (item != null) {
             egret.Tween.get(item).to({
-                y: Director.getInstance().gameLayer.stageHeight
+                y: 392
             }, 200).call(function () {
                 item.parent.removeChild(item);
                 this.group_menu.visible = true;
@@ -555,10 +653,10 @@ var Game = (function (_super) {
         this.group_menu.visible = false;
         var item = new SelectSeed();
         // item.x = this.tudi.x + this.tudi.width / 2 - item.width / 2 ;
-        item.y = Director.getInstance().gameLayer.stageHeight;
+        item.y = 392;
         Director.getInstance().gameLayer.addChild(item);
         egret.Tween.get(item).to({
-            y: Director.getInstance().gameLayer.stageHeight - item.height
+            y: 0
         }, 200);
     };
     Game.prototype.addSelectAnimal = function () {

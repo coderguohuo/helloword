@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="selectSeed" width="750" height="392.42" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Rect width="730" height="320" x="10" y="63.95" anchorOffsetY="0" fillColor="0x333333" ellipseWidth="30"/>
-	<e:Scroller width="700" height="270" y="103.95" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+<e:Skin class="selectSeed" width="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="1334">
+	<e:Rect width="730" height="320" x="10" y="1003.34" anchorOffsetY="0" fillColor="0x333333" ellipseWidth="30"/>
+	<e:Scroller id="scrSeed" width="700" height="270" y="1049.98" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 		<e:Group id="group" anchorOffsetY="0" height="266">
 			<e:List id="list" x="0" y="0">
 				<e:layout>
@@ -10,7 +10,7 @@
 			</e:List>
 		</e:Group>
 	</e:Scroller>
-	<e:Group id="group_biaoqian" x="22" y="31.450000000000003" width="631" height="65">
+	<e:Group id="group_biaoqian" x="22" y="977.48" width="631" height="65">
 		<e:RadioButton id="rad_tutong" label="" x="0" y="0" name="1" visible="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -71,5 +71,6 @@
 			<e:HorizontalLayout gap="6"/>
 		</e:layout>
 	</e:Group>
-	<e:Image id="img_close" x="663.8" y="11.45" source="seed_close_png"/>
+	<e:Image id="img_close" x="663.8" y="957.48" source="seed_close_png"/>
+	<e:Group id="grpEmpty" width="750" height="1334" x="0" y="0" visible="false"/>
 </e:Skin>

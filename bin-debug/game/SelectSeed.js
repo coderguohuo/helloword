@@ -12,15 +12,53 @@ var SelectSeed = (function (_super) {
     __extends(SelectSeed, _super);
     function SelectSeed() {
         var _this = _super.call(this) || this;
+        _this.DragedSize = 60;
+        _this.dragedSeedData = null;
         _this.biaoqianName = null;
         _this.skinName = "selectSeed";
         _this.name = "selectseed";
         return _this;
     }
+    SelectSeed.prototype.setSeedBeClicked = function (data) {
+        this.dragedSeedData = data;
+        this.list.scrollEnabled = false;
+        this.scrSeed.scrollPolicyH = eui.ScrollPolicy.OFF;
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+    };
+    SelectSeed.prototype.onTouchMove = function (e) {
+        if (!this.dragedSeedData)
+            return;
+        console.log("stage-> moving now ! Mouse: [X:" + e.stageX + ",Y:" + e.stageY + "]");
+        if (this.imgDragSeed == null) {
+            var imgDragSeed = new eui.Image(Fach.host + this.dragedSeedData.img);
+            imgDragSeed.width = imgDragSeed.height = this.DragedSize;
+            this.addChild(imgDragSeed);
+            this.imgDragSeed = imgDragSeed;
+        }
+        var p = this.globalToLocal(e.stageX, e.stageY);
+        this.imgDragSeed.x = p.x - this.DragedSize / 2;
+        this.imgDragSeed.y = p.y - this.DragedSize / 2;
+        var game = Director.getInstance().gameLayer.getChildByName("game");
+        game.tryToPlant(e.stageX, e.stageY, this.dragedSeedData);
+    };
+    SelectSeed.prototype.onTouchEnd = function (e) {
+        console.log("stage-> moving over ! Mouse: [X:" + e.stageX + ",Y:" + e.stageY + "]");
+        this.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        this.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
+        if (this.imgDragSeed) {
+            this.removeChild(this.imgDragSeed);
+            this.imgDragSeed = null;
+        }
+        this.dragedSeedData = null;
+        this.scrSeed.scrollPolicyH = eui.ScrollPolicy.AUTO;
+    };
     SelectSeed.prototype.createChildren = function () {
         var context = this;
         this.img_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Close, this);
         this.addEventListener("touchTap", this.Touch, this);
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
         if (ListBeans.getInstance().seedMianBan != null) {
             var res = ListBeans.getInstance().seedMianBan;
             var data = res.resource.plants;

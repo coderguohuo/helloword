@@ -12,12 +12,38 @@ var SelectSeed_Item = (function (_super) {
     __extends(SelectSeed_Item, _super);
     function SelectSeed_Item() {
         var _this = _super.call(this) || this;
+        _this.touchSeedP = null;
         _this.isClock = false;
         _this.skinName = "selectSeed_Item";
         _this.rec_up.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.Touch, _this);
         _this.rec_down.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.Down, _this);
+        _this.rec_up.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onTouchBegin, _this);
+        _this.rec_up.addEventListener(egret.TouchEvent.TOUCH_MOVE, _this.onTouchMove, _this);
         return _this;
     }
+    SelectSeed_Item.prototype.onTouchMove = function (e) {
+        if (this.touchSeedP == null)
+            return;
+        var preP = this.touchSeedP;
+        var curP = { x: e.stageX, y: e.stageY };
+        var a = Math.abs(curP.x - preP.x);
+        var b = preP.y - curP.y;
+        if (b / a < 1.5) {
+            // this.touchSeedP = null;
+            return;
+        }
+        var selectSeed = Director.getInstance().gameLayer.getChildByName("selectseed");
+        selectSeed.setSeedBeClicked(this.data);
+        this.touchSeedP = null;
+        // let game = <Game>Director.getInstance().gameLayer.getChildByName("game");
+        // game.setSeedBeClicked(this.data);
+        // console.log("seedItem-> moving now ! Mouse: [X:"+e.stageX+",Y:"+e.stageY+"]");
+    };
+    SelectSeed_Item.prototype.onTouchBegin = function (e) {
+        if (this.isClock)
+            return;
+        this.touchSeedP = { x: e.stageX, y: e.stageY };
+    };
     SelectSeed_Item.prototype.createChildren = function () {
         console.log(1);
     };
@@ -97,13 +123,13 @@ var SelectSeed_Item = (function (_super) {
         else {
             willBean = game.TuDiBeans[curSelectedLand - 1];
         }
-        var self = this;
+        // let self = this;
         if (willBean) {
             this.updateLandToGrow(seedData, willBean, 200);
-            self.rec_up.touchEnabled = false;
-            egret.setTimeout(function () {
-                self.rec_up.touchEnabled = true;
-            }, self, 100);
+            // self.rec_up.touchEnabled = false;
+            // egret.setTimeout(function(){
+            // 	self.rec_up.touchEnabled = true;
+            // }, self, 100);
             FachUtils.Post("/plant/" + curSelectedLand, { id: seedData._id }, function (res) {
                 if (res.status) {
                     game.tudi_selected_pond = 0;

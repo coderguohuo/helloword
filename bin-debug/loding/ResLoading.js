@@ -12,30 +12,28 @@ var ResLoading = (function (_super) {
     __extends(ResLoading, _super);
     function ResLoading() {
         var _this = _super.call(this) || this;
-        _this.loadGroups = []; //要加载的组
         _this.skinName = "resource/skin/aResLoadingSkin.exml";
-        _this.addEventListener(eui.UIEvent.COMPLETE, _this.Complete, _this);
+        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAdded, _this);
         return _this;
     }
-    ResLoading.prototype.Complete = function () {
-        this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
+    ResLoading.prototype.onAdded = function () {
+        this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onRemoved, this);
         this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
+    };
+    ResLoading.prototype.onRemoved = function () {
+        this.removeEventListener(egret.Event.ENTER_FRAME, this.update, this);
+        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onRemoved, this);
+    };
+    ResLoading.prototype.update = function () {
+        if (this.circle) {
+            this.circle.rotation += 3;
+        }
     };
     ResLoading.getInstance = function () {
         if (this.loading == null) {
             this.loading = new ResLoading();
         }
         return this.loading;
-    };
-    ResLoading.prototype.removeStage = function () {
-        this.removeEventListener(egret.Event.ENTER_FRAME, this.update, this);
-        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.removeStage, this);
-    };
-    ResLoading.prototype.update = function () {
-        this.circle.rotation += 3;
-    };
-    ResLoading.prototype.setProgress = function (current, total) {
-        this.textLabel.text = current + "/" + total;
     };
     return ResLoading;
 }(eui.Component));
